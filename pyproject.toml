@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "a11y-ci"
-version = "0.1.0"
+version = "0.1.1"
 description = "CI gate for a11y-lint scorecards (low-vision-first)."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -50,9 +50,9 @@ dev = [
 a11y-ci = "a11y_ci.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/mcp-tool-shop/a11y-ci"
-Repository = "https://github.com/mcp-tool-shop/a11y-ci"
-Issues = "https://github.com/mcp-tool-shop/a11y-ci/issues"
+Homepage = "https://github.com/mcp-tool-shop-org/a11y-ci"
+Repository = "https://github.com/mcp-tool-shop-org/a11y-ci"
+Issues = "https://github.com/mcp-tool-shop-org/a11y-ci/issues"
 
 [tool.ruff]
 line-length = 100
