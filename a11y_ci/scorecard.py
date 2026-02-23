@@ -93,7 +93,5 @@ class Scorecard:
         """Get findings at or above severity threshold."""
         thr = normalize_severity(threshold)
         return [
-            f
-            for f in self.findings
-            if severity_ge(normalize_severity(str(f.get("severity"))), thr)
+            f for f in self.findings if severity_ge(normalize_severity(str(f.get("severity"))), thr)
         ]

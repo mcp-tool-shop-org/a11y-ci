@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-import pytest
 
 from a11y_ci.allowlist import Allowlist
 from a11y_ci.gate import gate

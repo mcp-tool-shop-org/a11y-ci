@@ -14,7 +14,6 @@ from typing import Dict, List, Optional, Set
 
 from .allowlist import Allowlist
 from .scorecard import (
-    SEVERITY_ORDER,
     Scorecard,
     finding_id,
     normalize_severity,
@@ -86,9 +85,7 @@ def gate(
     # Rule 1: current has any at/above fail_on
     cur_blocking = cur.ids_at_or_above(fail_on)
     if cur_blocking:
-        reasons.append(
-            f"Current run has {len(cur_blocking)} finding(s) at or above '{fail_on}'."
-        )
+        reasons.append(f"Current run has {len(cur_blocking)} finding(s) at or above '{fail_on}'.")
 
     new_blocking: List[str] = []
     if base:

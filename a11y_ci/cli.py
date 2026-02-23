@@ -69,9 +69,7 @@ def gate_cmd(
             id="A11Y.CI.ALLOWLIST.INVALID",
             title="Allowlist is invalid",
             what=["The allowlist file failed schema validation."],
-            why=[
-                "The allowlist must include finding_id, expires, and reason for each entry."
-            ],
+            why=["The allowlist must include finding_id, expires, and reason for each entry."],
             fix=[
                 "Fix the allowlist JSON and re-run the gate.",
                 f"Details: {str(e).splitlines()[0]}",
