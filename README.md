@@ -5,10 +5,8 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/a11y-ci/main/logo-a11y-ci.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
