@@ -27,3 +27,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+site/.astro/
+site/node_modules/
+site/dist/
+node_modules/

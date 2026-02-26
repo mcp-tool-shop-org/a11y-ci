@@ -19,28 +19,28 @@
 
 ---
 
-## Why
+## 为什么？
 
-Accessibility linting is only useful if it blocks regressions. Most teams skip it because there is no CI-native way to fail a build on accessibility findings without drowning in false positives or losing context on what regressed.
+可访问性代码检查（linting）只有在能够阻止代码回退（regression）时才有用。大多数团队会跳过它，因为没有一种原生 CI（持续集成）方式，可以在不产生大量误报或丢失回退信息的情况下，根据可访问性检查结果失败构建。
 
-**a11y-ci** bridges that gap:
+**a11y-ci** 弥补了这一差距：
 
-- Consumes scorecards produced by [a11y-lint](https://pypi.org/project/a11y-lint/) (or any compatible JSON)
-- Gates on severity, count regression, and new-finding detection
-- Supports time-boxed allowlists so suppressions never become permanent
-- Outputs every result in the low-vision-first **What / Why / Fix** format
+- 它可以处理由 [a11y-lint](https://pypi.org/project/a11y-lint/)（或任何兼容的 JSON 格式）生成的评分卡。
+- 它会根据严重程度、回退数量和新发现的检测结果进行判断。
+- 它支持时间限制的允许列表，以防止抑制（suppressions）永久生效。
+- 它以易于理解的 **问题/原因/解决方案** 格式输出所有结果。
 
-No network calls. Fully deterministic. Runs in any CI system that has Python.
+它不需要网络连接，完全可预测，可以在任何安装了 Python 的 CI 系统中运行。
 
-## Install
+## 安装
 
 ```bash
 pip install a11y-ci
 ```
 
-Requires Python 3.11 or later.
+需要 Python 3.11 或更高版本。
 
-## Quick Start
+## 快速入门
 
 ```bash
 # Generate a scorecard with a11y-lint
@@ -63,16 +63,16 @@ a11y-ci gate \
   --fail-on moderate
 ```
 
-## What It Does
+## 它能做什么
 
-| Capability | Description |
-|-----------|-------------|
-| **Severity gate** | Fails if any finding meets or exceeds the configured severity (default: serious) |
-| **Baseline regression** | Compares current run against a saved baseline; fails if serious+ count increases or new serious+ IDs appear |
-| **Allowlist with expiry** | Suppresses known findings temporarily; expired entries automatically fail the gate |
-| **Low-vision-first output** | Every message follows the `[OK]`/`[WARN]`/`[ERROR]` + What/Why/Fix contract |
+| 功能 | 描述 |
+| ----------- | ------------- |
+| **Severity gate** | 如果任何发现的严重程度达到或超过配置的级别（默认：严重），则会失败。 |
+| **Baseline regression** | 将当前运行的结果与保存的基线进行比较；如果严重程度+ 的数量增加或出现新的严重程度+ ID，则会失败。 |
+| **Allowlist with expiry** | 暂时抑制已知的发现；到期的条目会自动导致检查失败。 |
+| **Low-vision-first output** | 每个消息都遵循 `[OK]` / `[WARN]` / `[ERROR]` + 问题/原因/解决方案 的格式。 |
 
-## CLI Reference
+## 命令行参考
 
 ```
 a11y-ci gate [OPTIONS]
@@ -85,29 +85,29 @@ Options:
                        Choices: info | minor | moderate | serious | critical
 ```
 
-### Severity Levels
+### 严重程度级别
 
-| Level | When to use |
-|-------|-------------|
-| **critical** | Only block on show-stoppers |
-| **serious** | Default. Blocks on barriers that affect daily use |
-| **moderate** | Stricter. Includes usability issues |
-| **minor** | Strictest practical. Catches most issues |
-| **info** | Catches everything, including informational notes |
+| Level | 使用场景 |
+| ------- | ------------- |
+| **critical（严重）** | 仅在出现会完全阻止用户使用的严重问题时才触发。 |
+| **serious（严重）** | 默认级别。阻止影响日常使用的障碍。 |
+| **moderate（中等）** | 更严格。包括可用性问题。 |
+| **minor（轻微）** | 最严格的实用级别。可以发现大多数问题。 |
+| **info（信息）** | 可以发现所有问题，包括信息性注释。 |
 
-## Exit Codes
+## 退出码
 
-| Code | Meaning |
-|------|---------|
-| `0` | All checks passed |
-| `2` | Input or validation error (bad JSON, missing file, schema mismatch) |
-| `3` | Policy gate failed (severity threshold, regression, or expired allowlist) |
+| Code | 含义 |
+| ------ | --------- |
+| `0` | 所有检查都通过 |
+| `2` | 输入或验证错误（无效的 JSON、缺少文件、模式不匹配） |
+| `3` | 策略检查失败（严重程度阈值、回退或到期的允许列表） |
 
-## Output Contract
+## 输出格式
 
-Every message follows the low-vision-first contract. No message is ever just a status code or cryptic one-liner.
+每个消息都遵循易于理解的格式。任何消息都不会仅仅是状态码或晦涩的简短说明。
 
-### Gate passes
+### 检查通过
 
 ```
 [OK] Accessibility gate passed (ID: A11Y.CI.GATE.PASS)
@@ -122,7 +122,7 @@ Fix:
   Proceed with merge/release.
 ```
 
-### Gate fails
+### 检查失败
 
 ```
 [ERROR] Accessibility gate failed (ID: A11Y.CI.GATE.FAIL)
@@ -141,7 +141,7 @@ Fix:
   Blocking IDs (current): CLI.COLOR.ONLY, CLI.EXIT.SILENT, CLI.STACK.RAW
 ```
 
-### Input errors
+### 输入错误
 
 ```
 [ERROR] Allowlist is invalid (ID: A11Y.CI.ALLOWLIST.INVALID)
@@ -156,15 +156,15 @@ Fix:
   Fix the allowlist JSON and re-run the gate.
 ```
 
-## Allowlist Format
+## 允许列表格式
 
-Allowlist entries suppress known findings temporarily. Every entry requires:
+允许列表条目可以暂时抑制已知的发现。每个条目都需要：
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `finding_id` | string | The rule/finding ID to suppress |
-| `expires` | string | ISO date (`yyyy-mm-dd`). Expired entries fail the gate. |
-| `reason` | string | Minimum 10 characters explaining the suppression |
+| Field | Type | 描述 |
+| ------- | ------ | ------------- |
+| `finding_id` | 字符串 | 要抑制的规则/发现 ID。 |
+| `expires` | 字符串 | ISO 日期（yyyy-mm-dd）。到期的条目会导致检查失败。 |
+| `reason` | 字符串 | 至少 10 个字符，用于解释抑制的原因。 |
 
 ```json
 {
@@ -179,11 +179,11 @@ Allowlist entries suppress known findings temporarily. Every entry requires:
 }
 ```
 
-Expired allowlist entries are not silently ignored. They fail the gate with a clear message explaining which entry expired and when.
+到期的允许列表条目不会被静默忽略。它们会失败，并显示一条明确的消息，说明哪个条目已过期以及过期时间。
 
-## Scorecard Format
+## 评分卡格式
 
-a11y-ci accepts scorecards with either summary counts or raw findings (or both):
+a11y-ci 可以接受包含汇总计数或原始发现（或两者）的评分卡。
 
 ```json
 {
@@ -204,9 +204,9 @@ a11y-ci accepts scorecards with either summary counts or raw findings (or both):
 }
 ```
 
-Finding IDs are extracted flexibly from `id`, `rule_id`, `finding_id`, or `code` fields.
+发现 ID 可以灵活地从 `id`、`rule_id`、`finding_id` 或 `code` 字段中提取。
 
-## GitHub Actions Example
+## GitHub Actions 示例
 
 ```yaml
 name: Accessibility Gate
@@ -238,9 +238,9 @@ jobs:
           a11y-ci gate --current a11y.scorecard.json --baseline baseline/a11y.scorecard.json
 ```
 
-### Updating the baseline
+### 更新基线
 
-When you intentionally change CLI output, update the baseline:
+当您有意更改命令行输出时，请更新基线：
 
 ```bash
 a11y-lint scan output.txt --json > baseline/a11y.scorecard.json
@@ -248,7 +248,7 @@ git add baseline/a11y.scorecard.json
 git commit -m "Update a11y baseline"
 ```
 
-## How It Works
+## 工作原理
 
 ```
 Scorecard JSON ──► Parse findings + normalize severities
@@ -266,17 +266,17 @@ Baseline JSON  ──► Compare counts + detect new IDs
                    What / Why / Fix output
 ```
 
-## Companion Tools
+## 相关工具
 
-| Tool | Description |
-|------|-------------|
-| [a11y-lint](https://pypi.org/project/a11y-lint/) | Accessibility linter for CLI output (produces scorecards) |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | Low-vision-first assistant for CLI failures |
+| Tool | 描述 |
+| ------ | ------------- |
+| [a11y-lint](https://pypi.org/project/a11y-lint/) | 用于命令行输出的可访问性代码检查器（生成评分卡）。 |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | 针对 CLI 故障的低视力辅助工具。 |
 
-## Contributing
+## 贡献
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+请参考 [CONTRIBUTING.md](CONTRIBUTING.md) 了解贡献指南。
 
-## License
+## 许可证
 
 MIT

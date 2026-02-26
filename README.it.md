@@ -19,28 +19,28 @@
 
 ---
 
-## Why
+## Perché
 
-Accessibility linting is only useful if it blocks regressions. Most teams skip it because there is no CI-native way to fail a build on accessibility findings without drowning in false positives or losing context on what regressed.
+L'analisi dell'accessibilità è utile solo se previene regressioni. La maggior parte dei team la ignora perché non esiste un modo nativo per far fallire una build a causa di problemi di accessibilità senza generare un numero eccessivo di falsi positivi o perdere il contesto di ciò che è regredito.
 
-**a11y-ci** bridges that gap:
+**a11y-ci** colma questa lacuna:
 
-- Consumes scorecards produced by [a11y-lint](https://pypi.org/project/a11y-lint/) (or any compatible JSON)
-- Gates on severity, count regression, and new-finding detection
-- Supports time-boxed allowlists so suppressions never become permanent
-- Outputs every result in the low-vision-first **What / Why / Fix** format
+- Utilizza i report prodotti da [a11y-lint](https://pypi.org/project/a11y-lint/) (o qualsiasi file JSON compatibile).
+- Valuta la gravità, il numero di regressioni e la rilevazione di nuove problematiche.
+- Supporta liste di esclusione temporanee, in modo che le soppressioni non diventino permanenti.
+- Visualizza ogni risultato nel formato **Cosa / Perché / Soluzione**, con priorità per le persone con problemi di vista.
 
-No network calls. Fully deterministic. Runs in any CI system that has Python.
+Non effettua chiamate di rete. Completamente deterministico. Funziona in qualsiasi sistema CI che abbia Python.
 
-## Install
+## Installazione
 
 ```bash
 pip install a11y-ci
 ```
 
-Requires Python 3.11 or later.
+Richiede Python 3.11 o versioni successive.
 
-## Quick Start
+## Guida rapida
 
 ```bash
 # Generate a scorecard with a11y-lint
@@ -63,16 +63,16 @@ a11y-ci gate \
   --fail-on moderate
 ```
 
-## What It Does
+## Cosa fa
 
-| Capability | Description |
-|-----------|-------------|
-| **Severity gate** | Fails if any finding meets or exceeds the configured severity (default: serious) |
-| **Baseline regression** | Compares current run against a saved baseline; fails if serious+ count increases or new serious+ IDs appear |
-| **Allowlist with expiry** | Suppresses known findings temporarily; expired entries automatically fail the gate |
-| **Low-vision-first output** | Every message follows the `[OK]`/`[WARN]`/`[ERROR]` + What/Why/Fix contract |
+| Funzionalità | Descrizione |
+| ----------- | ------------- |
+| **Severity gate** | Fallisce se qualsiasi riscontro supera o raggiunge la gravità configurata (predefinito: grave). |
+| **Baseline regression** | Confronta l'esecuzione corrente con una baseline salvata; fallisce se il numero di riscontri gravi aumenta o se compaiono nuovi ID di riscontri gravi. |
+| **Allowlist with expiry** | Sopprime temporaneamente i riscontri noti; le voci scadute falliscono automaticamente la verifica. |
+| **Low-vision-first output** | Ogni messaggio segue il contratto `[OK]/[AVVERTIMENTO]/[ERRORE]` + Cosa/Perché/Soluzione. |
 
-## CLI Reference
+## Riferimento della CLI
 
 ```
 a11y-ci gate [OPTIONS]
@@ -85,29 +85,29 @@ Options:
                        Choices: info | minor | moderate | serious | critical
 ```
 
-### Severity Levels
+### Livelli di gravità
 
-| Level | When to use |
-|-------|-------------|
-| **critical** | Only block on show-stoppers |
-| **serious** | Default. Blocks on barriers that affect daily use |
-| **moderate** | Stricter. Includes usability issues |
-| **minor** | Strictest practical. Catches most issues |
-| **info** | Catches everything, including informational notes |
+| Level | Quando utilizzarlo |
+| ------- | ------------- |
+| **critico** | Blocca solo i problemi che impediscono il funzionamento. |
+| **grave** | Predefinito. Blocca i problemi che influiscono sull'uso quotidiano. |
+| **moderato** | Più restrittivo. Include problemi di usabilità. |
+| **minore** | Il più restrittivo possibile. Rileva la maggior parte dei problemi. |
+| **informazione** | Rileva tutto, comprese le note informative. |
 
-## Exit Codes
+## Codici di uscita
 
-| Code | Meaning |
-|------|---------|
-| `0` | All checks passed |
-| `2` | Input or validation error (bad JSON, missing file, schema mismatch) |
-| `3` | Policy gate failed (severity threshold, regression, or expired allowlist) |
+| Code | Significato |
+| ------ | --------- |
+| `0` | Tutti i controlli superati |
+| `2` | Errore di input o di validazione (JSON non valido, file mancante, incompatibilità dello schema). |
+| `3` | La verifica fallisce (soglia di gravità, regressione o lista di esclusione scaduta). |
 
-## Output Contract
+## Contratto di output
 
-Every message follows the low-vision-first contract. No message is ever just a status code or cryptic one-liner.
+Ogni messaggio segue il contratto con priorità per le persone con problemi di vista. Nessun messaggio è semplicemente un codice di stato o una breve descrizione criptica.
 
-### Gate passes
+### La verifica passa
 
 ```
 [OK] Accessibility gate passed (ID: A11Y.CI.GATE.PASS)
@@ -122,7 +122,7 @@ Fix:
   Proceed with merge/release.
 ```
 
-### Gate fails
+### La verifica fallisce
 
 ```
 [ERROR] Accessibility gate failed (ID: A11Y.CI.GATE.FAIL)
@@ -141,7 +141,7 @@ Fix:
   Blocking IDs (current): CLI.COLOR.ONLY, CLI.EXIT.SILENT, CLI.STACK.RAW
 ```
 
-### Input errors
+### Errori di input
 
 ```
 [ERROR] Allowlist is invalid (ID: A11Y.CI.ALLOWLIST.INVALID)
@@ -156,15 +156,15 @@ Fix:
   Fix the allowlist JSON and re-run the gate.
 ```
 
-## Allowlist Format
+## Formato della lista di esclusione
 
-Allowlist entries suppress known findings temporarily. Every entry requires:
+Le voci della lista di esclusione sopprimono temporaneamente i riscontri noti. Ogni voce richiede:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `finding_id` | string | The rule/finding ID to suppress |
-| `expires` | string | ISO date (`yyyy-mm-dd`). Expired entries fail the gate. |
-| `reason` | string | Minimum 10 characters explaining the suppression |
+| Field | Type | Descrizione |
+| ------- | ------ | ------------- |
+| `finding_id` | stringa | L'ID della regola/del riscontro da sopprimere. |
+| `expires` | stringa | Data in formato ISO (`aaaa-mm-gg`). Le voci scadute falliscono la verifica. |
+| `reason` | stringa | Almeno 10 caratteri che spiegano la soppressione. |
 
 ```json
 {
@@ -179,11 +179,11 @@ Allowlist entries suppress known findings temporarily. Every entry requires:
 }
 ```
 
-Expired allowlist entries are not silently ignored. They fail the gate with a clear message explaining which entry expired and when.
+Le voci scadute della lista di esclusione non vengono ignorate silenziosamente. Falliscono la verifica con un messaggio chiaro che indica quale voce è scaduta e quando.
 
-## Scorecard Format
+## Formato del report
 
-a11y-ci accepts scorecards with either summary counts or raw findings (or both):
+a11y-ci accetta report con conteggi riassuntivi o riscontri dettagliati (o entrambi):
 
 ```json
 {
@@ -204,9 +204,9 @@ a11y-ci accepts scorecards with either summary counts or raw findings (or both):
 }
 ```
 
-Finding IDs are extracted flexibly from `id`, `rule_id`, `finding_id`, or `code` fields.
+Gli ID dei riscontri vengono estratti in modo flessibile dai campi `id`, `rule_id`, `finding_id` o `code`.
 
-## GitHub Actions Example
+## Esempio per GitHub Actions
 
 ```yaml
 name: Accessibility Gate
@@ -238,9 +238,9 @@ jobs:
           a11y-ci gate --current a11y.scorecard.json --baseline baseline/a11y.scorecard.json
 ```
 
-### Updating the baseline
+### Aggiornamento della baseline
 
-When you intentionally change CLI output, update the baseline:
+Quando si modificano intenzionalmente gli output della CLI, aggiornare la baseline:
 
 ```bash
 a11y-lint scan output.txt --json > baseline/a11y.scorecard.json
@@ -248,7 +248,7 @@ git add baseline/a11y.scorecard.json
 git commit -m "Update a11y baseline"
 ```
 
-## How It Works
+## Come funziona
 
 ```
 Scorecard JSON ──► Parse findings + normalize severities
@@ -266,17 +266,17 @@ Baseline JSON  ──► Compare counts + detect new IDs
                    What / Why / Fix output
 ```
 
-## Companion Tools
+## Strumenti complementari
 
-| Tool | Description |
-|------|-------------|
-| [a11y-lint](https://pypi.org/project/a11y-lint/) | Accessibility linter for CLI output (produces scorecards) |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | Low-vision-first assistant for CLI failures |
+| Tool | Descrizione |
+| ------ | ------------- |
+| [a11y-lint](https://pypi.org/project/a11y-lint/) | Analizzatore di accessibilità per gli output della CLI (genera report). |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistente per utenti con problemi di vista, progettato per gestire errori nell'interfaccia a riga di comando (CLI). |
 
-## Contributing
+## Contributi
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Consultare il file [CONTRIBUTING.md](CONTRIBUTING.md) per le linee guida.
 
-## License
+## Licenza
 
 MIT
