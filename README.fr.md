@@ -1,17 +1,16 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.md">English</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/a11y-ci/readme.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci"><img src="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci/branch/main/graph/badge.svg" alt="Coverage" /></a>
   <a href="https://pypi.org/project/a11y-ci/"><img src="https://img.shields.io/pypi/v/a11y-ci" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://mcp-tool-shop-org.github.io/a11y-ci/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page" /></a>
@@ -21,7 +20,7 @@
 
 ## Pourquoi
 
-L'analyse de l'accessibilité n'est utile que si elle permet d'éviter les régressions. La plupart des équipes l'ignorent car il n'existe pas de moyen natif dans les systèmes d'intégration continue (CI) pour signaler un échec de la compilation en raison de problèmes d'accessibilité, sans être submergé par de faux positifs ou sans perdre le contexte de ce qui a changé.
+L'analyse de l'accessibilité est utile uniquement si elle permet de détecter les régressions. La plupart des équipes l'ignorent car il n'existe pas de moyen natif dans les systèmes d'intégration continue (CI) pour faire échouer une compilation en raison de problèmes d'accessibilité, sans être submergées par de faux positifs ou sans perdre le contexte de ce qui a changé.
 
 **a11y-ci** comble cette lacune :
 
@@ -30,7 +29,7 @@ L'analyse de l'accessibilité n'est utile que si elle permet d'éviter les régr
 - Il prend en charge des listes d'exceptions temporaires pour éviter que les suppressions ne deviennent permanentes.
 - Il affiche chaque résultat dans le format **Quoi / Pourquoi / Solution** axé sur les personnes ayant une déficience visuelle.
 
-Aucun appel réseau. Entièrement déterministe. Fonctionne dans tout système CI qui dispose de Python.
+Aucune requête réseau. Entièrement déterministe. Fonctionne dans tout système CI qui dispose de Python.
 
 ## Installation
 
@@ -63,12 +62,12 @@ a11y-ci gate \
   --fail-on moderate
 ```
 
-## Ce que cela fait
+## Ce qu'il fait
 
-| Capacité | Description |
-| ----------- | ------------- |
-| **Severity gate** | Échec si une anomalie atteint ou dépasse la gravité configurée (par défaut : grave). |
-| **Baseline regression** | Compare l'exécution actuelle à une référence sauvegardée ; échec si le nombre d'anomalies graves augmente ou si de nouvelles anomalies graves apparaissent. |
+| Fonctionnalité | Description |
+|-----------|-------------|
+| **Severity gate** | Échoue si une anomalie atteint ou dépasse la gravité configurée (par défaut : grave). |
+| **Baseline regression** | Compare l'exécution actuelle à une référence enregistrée ; échoue si le nombre d'anomalies graves augmente ou si de nouveaux identifiants d'anomalies graves apparaissent. |
 | **Allowlist with expiry** | Supprime temporairement les anomalies connues ; les entrées expirées échouent automatiquement la vérification. |
 | **Low-vision-first output** | Chaque message suit le contrat `[OK]/[WARN]/[ERROR]` + Quoi/Pourquoi/Solution. |
 
@@ -87,18 +86,18 @@ Options:
 
 ### Niveaux de gravité
 
-| Level | Quand utiliser |
-| ------- | ------------- |
-| **critique** | Ne bloque que les problèmes bloquants. |
-| **grave** | Par défaut. Bloque les problèmes qui affectent l'utilisation quotidienne. |
-| **modéré** | Plus strict. Inclut les problèmes d'utilisabilité. |
-| **mineur** | Le plus strict possible. Détecte la plupart des problèmes. |
-| **information** | Détecte tout, y compris les notes d'information. |
+| Niveau | Quand l'utiliser |
+|-------|-------------|
+| **critical** | Ne bloquer que les problèmes critiques. |
+| **serious** | Par défaut. Bloque les problèmes qui affectent l'utilisation quotidienne. |
+| **moderate** | Plus strict. Inclut les problèmes d'utilisabilité. |
+| **minor** | Le plus strict possible. Détecte la plupart des problèmes. |
+| **info** | Détecte tout, y compris les notes d'information. |
 
 ## Codes de sortie
 
 | Code | Signification |
-| ------ | --------- |
+|------|---------|
 | `0` | Toutes les vérifications ont réussi. |
 | `2` | Erreur d'entrée ou de validation (JSON incorrect, fichier manquant, incompatibilité de schéma). |
 | `3` | La vérification a échoué (seuil de gravité, régressions ou liste d'exceptions expirée). |
@@ -160,9 +159,9 @@ Fix:
 
 Les entrées de la liste d'exceptions suppriment temporairement les anomalies connues. Chaque entrée nécessite :
 
-| Field | Type | Description |
-| ------- | ------ | ------------- |
-| `finding_id` | chaîne de caractères | L'ID de la règle/de l'anomalie à supprimer. |
+| Champ | Type | Description |
+|-------|------|-------------|
+| `finding_id` | chaîne de caractères | L'identifiant de la règle/de l'anomalie à supprimer. |
 | `expires` | chaîne de caractères | Date au format ISO (`AAAA-MM-JJ`). Les entrées expirées échouent la vérification. |
 | `reason` | chaîne de caractères | Au moins 10 caractères expliquant la suppression. |
 
@@ -204,7 +203,7 @@ a11y-ci accepte les rapports contenant soit des nombres récapitulatifs, soit de
 }
 ```
 
-Les ID des anomalies sont extraits de manière flexible des champs `id`, `rule_id`, `finding_id` ou `code`.
+Les identifiants des anomalies sont extraits de manière flexible des champs `id`, `rule_id`, `finding_id` ou `code`.
 
 ## Exemple pour GitHub Actions
 
@@ -268,15 +267,35 @@ Baseline JSON  ──► Compare counts + detect new IDs
 
 ## Outils complémentaires
 
-| Tool | Description |
-| ------ | ------------- |
+| Outil | Description |
+|------|-------------|
 | [a11y-lint](https://pypi.org/project/a11y-lint/) | Analyseur d'accessibilité pour la sortie de l'interface en ligne de commande (génère des rapports). |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistant pour les utilisateurs ayant une faible vision, conçu pour gérer les erreurs de CLI. |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistant axé sur les personnes ayant une déficience visuelle pour les échecs de l'interface en ligne de commande. |
 
-## Contribution
+## Sécurité et portée des données
+
+- **Données accessibles :** Lit les fichiers de rapport JSON à partir du disque. Compare les anomalies à des références et à des listes d'exceptions.
+- **Données NON accessibles :** Aucune requête réseau. Aucune télémétrie. Aucun stockage de données utilisateur. Aucun identifiant ou jeton.
+- **Autorisations requises :** Accès en lecture aux fichiers de rapport, de référence et de liste d'exceptions uniquement.
+
+## Rapport
+
+| Vérification | Statut |
+|------|--------|
+| A. Configuration de sécurité de base | PASSÉ (Réussi) |
+| B. Gestion des erreurs | PASSÉ (Réussi) |
+| C. Documentation pour les opérateurs | PASSÉ (Réussi) |
+| D. Bonnes pratiques de déploiement | PASSÉ (Réussi) |
+| E. Identité | PASSÉ (Réussi) |
+
+## Contributions
 
 Consultez le fichier [CONTRIBUTING.md](CONTRIBUTING.md) pour connaître les directives.
 
 ## Licence
 
 MIT
+
+---
+
+Créé par <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

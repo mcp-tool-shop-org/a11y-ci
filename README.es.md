@@ -1,17 +1,16 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.md">English</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/a11y-ci/readme.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci"><img src="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci/branch/main/graph/badge.svg" alt="Coverage" /></a>
   <a href="https://pypi.org/project/a11y-ci/"><img src="https://img.shields.io/pypi/v/a11y-ci" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://mcp-tool-shop-org.github.io/a11y-ci/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page" /></a>
@@ -25,10 +24,10 @@ La verificación de accesibilidad solo es útil si evita regresiones. La mayorí
 
 **a11y-ci** soluciona esa brecha:
 
-- Consume informes generados por [a11y-lint](https://pypi.org/project/a11y-lint/) (o cualquier formato JSON compatible).
+- Consume informes generados por [a11y-lint](https://pypi.org/project/a11y-lint/) (o cualquier archivo JSON compatible).
 - Evalúa la gravedad, el número de regresiones y la detección de nuevos problemas.
-- Admite listas de permisos temporales para que las supresiones nunca sean permanentes.
-- Muestra cada resultado en el formato **¿Qué / Por qué / Solución** priorizando la accesibilidad para personas con baja visión.
+- Admite listas de exclusión temporales para que las supresiones nunca sean permanentes.
+- Muestra cada resultado en el formato **¿Qué / Por qué / Solución** priorizando a usuarios con baja visión.
 
 No realiza llamadas a la red. Es completamente determinista. Funciona en cualquier sistema de integración continua que tenga Python.
 
@@ -66,7 +65,7 @@ a11y-ci gate \
 ## ¿Qué hace?
 
 | Capacidad | Descripción |
-| ----------- | ------------- |
+|-----------|-------------|
 | **Severity gate** | Falla si algún problema cumple o supera la gravedad configurada (por defecto: grave). |
 | **Baseline regression** | Compara la ejecución actual con una línea de base guardada; falla si el número de problemas graves aumenta o aparecen nuevos identificadores de problemas graves. |
 | **Allowlist with expiry** | Suprime temporalmente los problemas conocidos; las entradas caducadas fallan automáticamente la verificación. |
@@ -87,25 +86,25 @@ Options:
 
 ### Niveles de gravedad
 
-| Level | Cuándo usar |
-| ------- | ------------- |
-| **crítico** | Solo bloquea problemas críticos. |
-| **grave** | Por defecto. Bloquea problemas que afectan el uso diario. |
-| **moderado** | Más estricto. Incluye problemas de usabilidad. |
-| **menor** | El más estricto en la práctica. Detecta la mayoría de los problemas. |
-| **información** | Detecta todo, incluidas las notas informativas. |
+| Nivel | Cuándo usar |
+|-------|-------------|
+| **critical** | Solo bloquea problemas críticos. |
+| **serious** | Por defecto. Bloquea problemas que afectan el uso diario. |
+| **moderate** | Más estricto. Incluye problemas de usabilidad. |
+| **minor** | El más estricto posible. Detecta la mayoría de los problemas. |
+| **info** | Detecta todo, incluidas las notas informativas. |
 
 ## Códigos de salida
 
-| Code | Significado |
-| ------ | --------- |
+| Código | Significado |
+|------|---------|
 | `0` | Todas las verificaciones pasaron. |
 | `2` | Error de entrada o validación (JSON incorrecto, archivo faltante, falta de coincidencia de esquema). |
-| `3` | La verificación falló (umbral de gravedad, regresión o lista de permisos caducada). |
+| `3` | La verificación falló (umbral de gravedad, regresión o lista de exclusión caducada). |
 
 ## Contrato de salida
 
-Cada mensaje sigue el contrato de accesibilidad para personas con baja visión. Ningún mensaje es solo un código de estado o una línea críptica.
+Cada mensaje sigue el contrato priorizando a usuarios con baja visión. Ningún mensaje es simplemente un código de estado o una línea de texto críptica.
 
 ### Verificación superada
 
@@ -156,15 +155,15 @@ Fix:
   Fix the allowlist JSON and re-run the gate.
 ```
 
-## Formato de la lista de permisos
+## Formato de la lista de exclusión
 
-Las entradas de la lista de permisos suprimen temporalmente los problemas conocidos. Cada entrada requiere:
+Las entradas de la lista de exclusión suprimen temporalmente los problemas conocidos. Cada entrada requiere:
 
-| Field | Type | Descripción |
-| ------- | ------ | ------------- |
+| Campo | Tipo | Descripción |
+|-------|------|-------------|
 | `finding_id` | cadena de texto | El ID de la regla/problema a suprimir. |
 | `expires` | cadena de texto | Fecha en formato ISO (`aaaa-mm-dd`). Las entradas caducadas fallan la verificación. |
-| `reason` | cadena de texto | Mínimo de 10 caracteres que expliquen la supresión. |
+| `reason` | cadena de texto | Una explicación de al menos 10 caracteres sobre la supresión. |
 
 ```json
 {
@@ -179,7 +178,7 @@ Las entradas de la lista de permisos suprimen temporalmente los problemas conoci
 }
 ```
 
-Las entradas caducadas de la lista de permisos no se ignoran silenciosamente. Fallan la verificación con un mensaje claro que explica qué entrada caducó y cuándo.
+Las entradas caducadas de la lista de exclusión no se ignoran silenciosamente. Fallan la verificación con un mensaje claro que explica qué entrada caducó y cuándo.
 
 ## Formato del informe
 
@@ -240,7 +239,7 @@ jobs:
 
 ### Actualización de la línea de base
 
-Cuando cambie intencionalmente la salida de la CLI, actualice la línea de base:
+Cuando cambia intencionalmente la salida de la interfaz de línea de comandos, actualice la línea de base:
 
 ```bash
 a11y-lint scan output.txt --json > baseline/a11y.scorecard.json
@@ -268,15 +267,35 @@ Baseline JSON  ──► Compare counts + detect new IDs
 
 ## Herramientas complementarias
 
-| Tool | Descripción |
-| ------ | ------------- |
-| [a11y-lint](https://pypi.org/project/a11y-lint/) | Verificador de accesibilidad para la salida de la CLI (genera informes). |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | Asistente para usuarios con baja visión, diseñado para solucionar problemas en CLI. |
+| Herramienta | Descripción |
+|------|-------------|
+| [a11y-lint](https://pypi.org/project/a11y-lint/) | Verificador de accesibilidad para la salida de la interfaz de línea de comandos (genera informes). |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | Asistente priorizando a usuarios con baja visión para los fallos de la interfaz de línea de comandos. |
+
+## Seguridad y alcance de los datos
+
+- **Datos accedidos:** Lee archivos de informe JSON desde el disco. Compara los problemas con las líneas de base y las listas de exclusión.
+- **Datos NO accedidos:** No realiza solicitudes a la red. No recopila datos de telemetría. No almacena datos de usuario. No utiliza credenciales ni tokens.
+- **Permisos requeridos:** Solo se requiere acceso de lectura a los archivos de informe, línea de base y lista de exclusión.
+
+## Informe
+
+| Verificación | Estado |
+|------|--------|
+| A. Línea base de seguridad | PASADO |
+| B. Manejo de errores | PASADO |
+| C. Documentación para operadores | PASADO |
+| D. Higiene en el envío | PASADO |
+| E. Identidad | PASADO |
 
 ## Contribuciones
 
-Consulte el archivo [CONTRIBUTING.md](CONTRIBUTING.md) para obtener las directrices.
+Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para obtener las directrices.
 
 ## Licencia
 
 MIT
+
+---
+
+Creado por <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

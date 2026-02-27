@@ -1,17 +1,16 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.md">English</a>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/a11y-ci/readme.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci"><img src="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci/branch/main/graph/badge.svg" alt="Coverage" /></a>
   <a href="https://pypi.org/project/a11y-ci/"><img src="https://img.shields.io/pypi/v/a11y-ci" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://mcp-tool-shop-org.github.io/a11y-ci/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page" /></a>
@@ -21,14 +20,14 @@
 
 ## Por que
 
-A análise de acessibilidade é útil apenas se impede regressões. A maioria das equipes a ignora porque não existe uma maneira nativa de falhar uma compilação devido a problemas de acessibilidade, sem gerar muitos falsos positivos ou perder o contexto do que foi alterado.
+A análise de acessibilidade é útil apenas se impede regressões. A maioria das equipes a ignora porque não existe uma forma nativa de falhar uma compilação devido a problemas de acessibilidade, sem gerar muitos falsos positivos ou perder o contexto do que foi alterado.
 
-O **a11y-ci** preenche essa lacuna:
+O **a11y-ci** resolve essa lacuna:
 
-- Lê os relatórios gerados por [a11y-lint](https://pypi.org/project/a11y-lint/) (ou qualquer arquivo JSON compatível).
-- Avalia a gravidade, a regressão no número de ocorrências e a detecção de novas ocorrências.
+- Lê os relatórios gerados pelo [a11y-lint](https://pypi.org/project/a11y-lint/) (ou qualquer arquivo JSON compatível).
+- Avalia a severidade, o número de regressões e a detecção de novas ocorrências.
 - Suporta listas de permissão temporárias para que as supressões nunca se tornem permanentes.
-- Exibe todos os resultados no formato **O que / Por que / Solução**, priorizando a experiência de usuários com baixa visão.
+- Exibe todos os resultados no formato **O que / Por que / Correção**, priorizando usuários com baixa visão.
 
 Não faz chamadas de rede. É totalmente determinístico. Funciona em qualquer sistema de integração contínua que tenha Python.
 
@@ -66,11 +65,11 @@ a11y-ci gate \
 ## O que ele faz
 
 | Funcionalidade | Descrição |
-| ----------- | ------------- |
-| **Severity gate** | Falha se alguma ocorrência atinge ou excede a severidade configurada (padrão: grave). |
+|-----------|-------------|
+| **Severity gate** | Falha se alguma ocorrência atende ou excede a severidade configurada (padrão: grave). |
 | **Baseline regression** | Compara a execução atual com uma linha de base salva; falha se o número de ocorrências graves aumenta ou se novas ocorrências graves aparecem. |
-| **Allowlist with expiry** | Suprime ocorrências conhecidas temporariamente; as entradas expiradas falham automaticamente na verificação. |
-| **Low-vision-first output** | Cada mensagem segue o contrato `[OK]`/`[AVISO]`/`[ERRO]` + O que/Por que/Solução. |
+| **Allowlist with expiry** | Suprime temporariamente ocorrências conhecidas; as entradas expiradas falham automaticamente na verificação. |
+| **Low-vision-first output** | Cada mensagem segue o contrato `[OK]/[AVISO]/[ERRO]` + O que/Por que/Correção. |
 
 ## Referência da Linha de Comando
 
@@ -87,25 +86,25 @@ Options:
 
 ### Níveis de Severidade
 
-| Level | Quando usar |
-| ------- | ------------- |
-| **crítica** | Bloqueia apenas problemas críticos que impedem o uso. |
-| **grave** | Padrão. Bloqueia problemas que afetam o uso diário. |
-| **moderada** | Mais rigorosa. Inclui problemas de usabilidade. |
-| **menor** | Mais rigorosa na prática. Detecta a maioria dos problemas. |
-| **informativa** | Detecta tudo, incluindo notas informativas. |
+| Nível | Quando usar |
+|-------|-------------|
+| **critical** | Bloqueia apenas em problemas críticos. |
+| **serious** | Padrão. Bloqueia em problemas que afetam o uso diário. |
+| **moderate** | Mais rigoroso. Inclui problemas de usabilidade. |
+| **minor** | O mais rigoroso possível. Detecta a maioria dos problemas. |
+| **info** | Detecta tudo, incluindo notas informativas. |
 
 ## Códigos de Saída
 
-| Code | Significado |
-| ------ | --------- |
+| Código | Significado |
+|------|---------|
 | `0` | Todas as verificações passaram. |
 | `2` | Erro de entrada ou validação (JSON inválido, arquivo ausente, incompatibilidade de esquema). |
 | `3` | Falha na verificação (limite de severidade, regressão ou lista de permissão expirada). |
 
 ## Contrato de Saída
 
-Cada mensagem segue o contrato de priorização da experiência de usuários com baixa visão. Nenhuma mensagem é apenas um código de status ou uma frase enigmática.
+Cada mensagem segue o contrato priorizando usuários com baixa visão. Nenhuma mensagem é apenas um código de status ou uma frase enigmática.
 
 ### Verificação aprovada
 
@@ -156,15 +155,15 @@ Fix:
   Fix the allowlist JSON and re-run the gate.
 ```
 
-## Formato da Lista de Permissões
+## Formato da Lista de Permissão
 
-As entradas da lista de permissões suprimem temporariamente ocorrências conhecidas. Cada entrada requer:
+As entradas da lista de permissão suprimem temporariamente ocorrências conhecidas. Cada entrada requer:
 
-| Field | Type | Descrição |
-| ------- | ------ | ------------- |
+| Campo | Tipo | Descrição |
+|-------|------|-------------|
 | `finding_id` | string | O ID da regra/ocorrência a ser suprimida. |
 | `expires` | string | Data no formato ISO (`aaaa-mm-dd`). As entradas expiradas falham na verificação. |
-| `reason` | string | Explicação da supressão com no mínimo 10 caracteres. |
+| `reason` | string | No mínimo 10 caracteres explicando a supressão. |
 
 ```json
 {
@@ -179,7 +178,7 @@ As entradas da lista de permissões suprimem temporariamente ocorrências conhec
 }
 ```
 
-As entradas expiradas da lista de permissões não são ignoradas silenciosamente. Elas falham na verificação com uma mensagem clara explicando qual entrada expirou e quando.
+As entradas expiradas da lista de permissão não são ignoradas silenciosamente. Elas falham na verificação com uma mensagem clara explicando qual entrada expirou e quando.
 
 ## Formato do Relatório
 
@@ -268,10 +267,26 @@ Baseline JSON  ──► Compare counts + detect new IDs
 
 ## Ferramentas Complementares
 
-| Tool | Descrição |
-| ------ | ------------- |
+| Ferramenta | Descrição |
+|------|-------------|
 | [a11y-lint](https://pypi.org/project/a11y-lint/) | Analisador de acessibilidade para a saída da linha de comando (gera relatórios). |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistente para auxiliar usuários com baixa visão em casos de falhas no CLI. |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistente priorizando usuários com baixa visão para falhas na linha de comando. |
+
+## Segurança e Escopo de Dados
+
+- **Dados acessados:** Lê arquivos de relatório JSON do disco. Compara as ocorrências com as linhas de base e as listas de permissão.
+- **Dados NÃO acessados:** Não faz requisições de rede. Não coleta dados de telemetria. Não armazena dados do usuário. Não usa credenciais ou tokens.
+- **Permissões necessárias:** Acesso de leitura aos arquivos de relatório, linha de base e lista de permissão.
+
+## Relatório
+
+| Verificação | Status |
+|------|--------|
+| A. Segurança Básica | APROVADO |
+| B. Tratamento de Erros | APROVADO |
+| C. Documentação para Operadores | APROVADO |
+| D. Boas Práticas de Implantação | APROVADO |
+| E. Identidade | APROVADO |
 
 ## Contribuições
 
@@ -280,3 +295,7 @@ Consulte o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para obter as diretrizes.
 ## Licença
 
 MIT
+
+---
+
+Criado por <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

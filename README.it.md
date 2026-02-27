@@ -1,17 +1,16 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.md">English</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/a11y-ci/readme.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci"><img src="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci/branch/main/graph/badge.svg" alt="Coverage" /></a>
   <a href="https://pypi.org/project/a11y-ci/"><img src="https://img.shields.io/pypi/v/a11y-ci" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://mcp-tool-shop-org.github.io/a11y-ci/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page" /></a>
@@ -21,16 +20,16 @@
 
 ## Perché
 
-L'analisi dell'accessibilità è utile solo se previene regressioni. La maggior parte dei team la ignora perché non esiste un modo nativo per far fallire una build a causa di problemi di accessibilità senza generare un numero eccessivo di falsi positivi o perdere il contesto di ciò che è regredito.
+L'analisi dell'accessibilità è utile solo se impedisce regressioni. Molti team la ignorano perché non esiste un modo nativo per far fallire una build a causa di problemi di accessibilità senza generare un numero eccessivo di falsi positivi o perdere il contesto di ciò che è regredito.
 
 **a11y-ci** colma questa lacuna:
 
-- Utilizza i report prodotti da [a11y-lint](https://pypi.org/project/a11y-lint/) (o qualsiasi file JSON compatibile).
+- Elabora i report prodotti da [a11y-lint](https://pypi.org/project/a11y-lint/) (o qualsiasi file JSON compatibile).
 - Valuta la gravità, il numero di regressioni e la rilevazione di nuove problematiche.
 - Supporta liste di esclusione temporanee, in modo che le soppressioni non diventino permanenti.
 - Visualizza ogni risultato nel formato **Cosa / Perché / Soluzione**, con priorità per le persone con problemi di vista.
 
-Non effettua chiamate di rete. Completamente deterministico. Funziona in qualsiasi sistema CI che abbia Python.
+Nessuna chiamata di rete. Completamente deterministico. Funziona in qualsiasi sistema CI che abbia Python.
 
 ## Installazione
 
@@ -66,7 +65,7 @@ a11y-ci gate \
 ## Cosa fa
 
 | Funzionalità | Descrizione |
-| ----------- | ------------- |
+|-----------|-------------|
 | **Severity gate** | Fallisce se qualsiasi riscontro supera o raggiunge la gravità configurata (predefinito: grave). |
 | **Baseline regression** | Confronta l'esecuzione corrente con una baseline salvata; fallisce se il numero di riscontri gravi aumenta o se compaiono nuovi ID di riscontri gravi. |
 | **Allowlist with expiry** | Sopprime temporaneamente i riscontri noti; le voci scadute falliscono automaticamente la verifica. |
@@ -87,27 +86,27 @@ Options:
 
 ### Livelli di gravità
 
-| Level | Quando utilizzarlo |
-| ------- | ------------- |
-| **critico** | Blocca solo i problemi che impediscono il funzionamento. |
-| **grave** | Predefinito. Blocca i problemi che influiscono sull'uso quotidiano. |
-| **moderato** | Più restrittivo. Include problemi di usabilità. |
-| **minore** | Il più restrittivo possibile. Rileva la maggior parte dei problemi. |
-| **informazione** | Rileva tutto, comprese le note informative. |
+| Livello | Quando utilizzarlo |
+|-------|-------------|
+| **critical** | Blocca solo i problemi critici. |
+| **serious** | Predefinito. Blocca i problemi che influiscono sull'uso quotidiano. |
+| **moderate** | Più rigoroso. Include problemi di usabilità. |
+| **minor** | Il più rigoroso possibile. Rileva la maggior parte dei problemi. |
+| **info** | Rileva tutto, comprese le note informative. |
 
 ## Codici di uscita
 
-| Code | Significato |
-| ------ | --------- |
-| `0` | Tutti i controlli superati |
-| `2` | Errore di input o di validazione (JSON non valido, file mancante, incompatibilità dello schema). |
-| `3` | La verifica fallisce (soglia di gravità, regressione o lista di esclusione scaduta). |
+| Codice | Significato |
+|------|---------|
+| `0` | Tutti i controlli superati. |
+| `2` | Errore di input o di convalida (JSON non valido, file mancante, incompatibilità dello schema). |
+| `3` | La verifica non è stata superata (soglia di gravità, regressione o lista di esclusione scaduta). |
 
 ## Contratto di output
 
 Ogni messaggio segue il contratto con priorità per le persone con problemi di vista. Nessun messaggio è semplicemente un codice di stato o una breve descrizione criptica.
 
-### La verifica passa
+### Verifica superata
 
 ```
 [OK] Accessibility gate passed (ID: A11Y.CI.GATE.PASS)
@@ -122,7 +121,7 @@ Fix:
   Proceed with merge/release.
 ```
 
-### La verifica fallisce
+### Verifica fallita
 
 ```
 [ERROR] Accessibility gate failed (ID: A11Y.CI.GATE.FAIL)
@@ -160,10 +159,10 @@ Fix:
 
 Le voci della lista di esclusione sopprimono temporaneamente i riscontri noti. Ogni voce richiede:
 
-| Field | Type | Descrizione |
-| ------- | ------ | ------------- |
+| Campo | Tipo | Descrizione |
+|-------|------|-------------|
 | `finding_id` | stringa | L'ID della regola/del riscontro da sopprimere. |
-| `expires` | stringa | Data in formato ISO (`aaaa-mm-gg`). Le voci scadute falliscono la verifica. |
+| `expires` | stringa | Data in formato ISO (`aaaa-mm-gg`). Le voci scadute fanno fallire la verifica. |
 | `reason` | stringa | Almeno 10 caratteri che spiegano la soppressione. |
 
 ```json
@@ -179,7 +178,7 @@ Le voci della lista di esclusione sopprimono temporaneamente i riscontri noti. O
 }
 ```
 
-Le voci scadute della lista di esclusione non vengono ignorate silenziosamente. Falliscono la verifica con un messaggio chiaro che indica quale voce è scaduta e quando.
+Le voci scadute della lista di esclusione non vengono ignorate silenziosamente. Falliscono la verifica con un messaggio chiaro che spiega quale voce è scaduta e quando.
 
 ## Formato del report
 
@@ -240,7 +239,7 @@ jobs:
 
 ### Aggiornamento della baseline
 
-Quando si modificano intenzionalmente gli output della CLI, aggiornare la baseline:
+Quando si modifica intenzionalmente l'output della CLI, aggiornare la baseline:
 
 ```bash
 a11y-lint scan output.txt --json > baseline/a11y.scorecard.json
@@ -268,10 +267,26 @@ Baseline JSON  ──► Compare counts + detect new IDs
 
 ## Strumenti complementari
 
-| Tool | Descrizione |
-| ------ | ------------- |
-| [a11y-lint](https://pypi.org/project/a11y-lint/) | Analizzatore di accessibilità per gli output della CLI (genera report). |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistente per utenti con problemi di vista, progettato per gestire errori nell'interfaccia a riga di comando (CLI). |
+| Strumento | Descrizione |
+|------|-------------|
+| [a11y-lint](https://pypi.org/project/a11y-lint/) | Analizzatore dell'accessibilità per l'output della CLI (genera report). |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | Assistente per problemi di accessibilità con priorità per le persone con problemi di vista. |
+
+## Sicurezza e ambito dei dati
+
+- **Dati accessibili:** Legge i file di report JSON dal disco. Confronta i riscontri con le baseline e le liste di esclusione.
+- **Dati NON accessibili:** Nessuna chiamata di rete. Nessuna telemetria. Nessun archivio di dati utente. Nessuna credenziale o token.
+- **Autorizzazioni richieste:** Solo accesso in lettura ai file di report, baseline e lista di esclusione.
+
+## Report
+
+| Verifica | Stato |
+|------|--------|
+| A. Standard di sicurezza | PASS (Superato) |
+| B. Gestione degli errori | PASS (Superato) |
+| C. Documentazione per gli operatori | PASS (Superato) |
+| D. Pratiche di sviluppo | PASS (Superato) |
+| E. Identità | PASS (Superato) |
 
 ## Contributi
 
@@ -280,3 +295,7 @@ Consultare il file [CONTRIBUTING.md](CONTRIBUTING.md) per le linee guida.
 ## Licenza
 
 MIT
+
+---
+
+Creato da <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

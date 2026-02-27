@@ -1,17 +1,16 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.md">English</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/a11y-ci/readme.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci"><img src="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci/branch/main/graph/badge.svg" alt="Coverage" /></a>
   <a href="https://pypi.org/project/a11y-ci/"><img src="https://img.shields.io/pypi/v/a11y-ci" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://mcp-tool-shop-org.github.io/a11y-ci/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page" /></a>
@@ -21,12 +20,12 @@
 
 ## なぜですか
 
-アクセシビリティに関するコードチェックは、問題の再発を防ぐ場合にのみ有効です。多くのチームがこのチェックを省略する理由は、CI環境でアクセシビリティの問題を検出し、ビルドを中断させるための、ネイティブな機能が存在しないからです。そうしないと、誤検出が多すぎたり、問題が発生した箇所に関する情報が失われたりする可能性があります。
+アクセシビリティに関するコードチェックは、問題の再発を防ぐ場合にのみ有効です。多くのチームがこのチェックを省略する理由は、CI環境でアクセシビリティの問題を検出した場合に、誤検出が多すぎたり、問題の具体的な内容が分からなくなったりするためです。ビルドを失敗させるための、CI環境に組み込み可能な方法がないためです。
 
 **a11y-ci** は、その隔たりを埋めるためのツールです。
 
 - [a11y-lint](https://pypi.org/project/a11y-lint/) (または互換性のあるJSON形式) によって生成された評価レポートを読み込みます。
-- 深刻度、回帰の数、および新規発見の検出に基づいて評価を行います。
+- 深刻度、件数増加、および新規検出に関するチェック項目を設定します。
 - 一定期間のみ有効な許可リストをサポートしており、抑制設定が永続化されることはありません。
 - すべての結果を、視覚障碍者向けの「何が問題か / なぜ問題なのか / 修正方法」という形式で出力します。
 
@@ -65,10 +64,8 @@ a11y-ci gate \
 
 ## その機能・役割
 
-| 能力 | 説明 |
-| 申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。 | 以下に翻訳します。
--------------
-申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。 |
+| 能力 | 説明. |
+|-----------|-------------|
 | **Severity gate** | 設定された重大度（デフォルト：深刻）に達する、またはそれ以上の結果が見つかった場合、エラーが発生します。 |
 | **Baseline regression** | 現在の実行結果を、保存された基準値と比較します。もし、重大なエラーの件数が増加した場合、または新しい重大なエラーIDが検出された場合は、エラーとなります。 |
 | **Allowlist with expiry** | 既知の検出結果を一時的に抑制します。また、有効期限が切れたエントリは自動的に無効になります。 |
@@ -89,36 +86,18 @@ Options:
 
 ### 重要度レベル
 
-| Level | 使用するタイミング。 |
-| The company is committed to providing high-quality products and services.
-(会社は、高品質な製品とサービスを提供することに尽力しています。)
-------- | 以下に翻訳します。
--------------
-申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。 |
-| 批判的な
-重要な
-危機的な
-危険な
-厳密な
-詳細な
-批評的な
-評価する | ショーを止めるような問題に対してのみ対応します。 |
-| 深刻な
-重大な
-真剣な
-真面目な
-深刻
-重大
-真剣
-真面目 | デフォルト設定。日常的な利用に影響を与える制限をブロックします。 |
-| 適度な、穏やかな、中程度の。 | より厳格な基準。使いやすさに関する問題も含まれます。 |
-| 軽微な、些細な。 | 最も厳格な設定で、ほとんどの問題を検出します。 |
-| **情報** | あらゆる情報をキャッチします。情報メモなども含まれます。 |
+| レベル | 使用するタイミング。 |
+|-------|-------------|
+| **critical** | ショーを止めるような問題に対してのみ対応します。 |
+| **serious** | デフォルト設定。日常的な利用に影響を与える障壁に対する制限を設けます。 |
+| **moderate** | より厳格な基準。使いやすさに関する問題も含まれます。 |
+| **minor** | 最も厳格な設定で、多くの問題を検出します。 |
+| **info** | あらゆる情報をキャッチします。情報メモなども含まれます。 |
 
 ## 終了コード
 
-| Code | 意味。 |
-| Certainly. Please provide the English text you would like me to translate. | Please provide the English text you would like me to translate. I am ready to translate it into Japanese. |
+| コード | 意味。 |
+|------|---------|
 | `0` | すべての検査に合格しました。 |
 | `2` | 入力エラーまたは検証エラー（不正なJSON形式、ファイルが見つからない、スキーマの不一致）。 |
 | `3` | ポリシー適用に失敗しました（重大度基準、リグレッション、または有効期限切れの許可リスト）。 |
@@ -180,12 +159,8 @@ Fix:
 
 許可リストのエントリは、既知の検出結果を一時的に抑制します。各エントリには、以下の情報が必要です。
 
-| Field | Type | 説明 |
-| The company is committed to providing high-quality products and services.
-(会社は、高品質な製品とサービスを提供することに尽力しています。)
-------- | Certainly. Please provide the English text you would like me to translate. | 以下に翻訳します。
--------------
-申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。 |
+| 分野 | 種類. | 説明. |
+|-------|------|-------------|
 | `finding_id` | 文字列 | 抑制対象となるルールまたは検出結果のID。 |
 | `expires` | 文字列 | ISOの日付形式（`yyyy-mm-dd`）。有効期限が切れたエントリは、検証プロセスに合格しません。 |
 | `reason` | 文字列 | 抑圧に関する説明を、最低10文字で記述してください。 |
@@ -292,17 +267,35 @@ Baseline JSON  ──► Compare counts + detect new IDs
 
 ## 関連ツール
 
-| Tool | 説明 |
-| Certainly. Please provide the English text you would like me to translate. | 以下に翻訳します。
--------------
-申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。 |
+| 道具。 | 説明. |
+|------|-------------|
 | [a11y-lint](https://pypi.org/project/a11y-lint/) | CLI（コマンドラインインターフェース）の出力におけるアクセシビリティをチェックするツール（評価レポートを作成します）。 |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | CLI（コマンドラインインターフェース）のエラー発生時に、視覚障碍者向けのサポート機能を提供します。 |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | 視覚障害者向けの、CLI（コマンドラインインターフェース）エラー対応アシスタント。 |
+
+## セキュリティとデータ範囲について
+
+- **アクセスされるデータ:** ディスクからJSON形式のスコアカードファイルを読み込みます。検出結果を基準値や許可リストと比較します。
+- **アクセスされないデータ:** ネットワークへのリクエストは一切ありません。テレメトリー機能も使用しません。ユーザーデータの保存も行いません。認証情報やトークンも使用しません。
+- **必要な権限:** スコアカード、基準値、および許可リストファイルへの読み取りアクセスのみが必要です。
+
+## スコアカード
+
+| 門 | ステータス |
+|------|--------|
+| A. セキュリティ基準 | 合格 |
+| B. エラー処理 | 合格 |
+| C. 運用者向けドキュメント | 合格 |
+| D. 納品時の衛生管理 | 合格 |
+| E. 認証 | 合格 |
 
 ## 貢献について
 
-詳細なガイドラインについては、[CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+ガイドラインについては、[CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
 ## ライセンス
 
-MITライセンス
+MIT
+
+---
+
+作成者: <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

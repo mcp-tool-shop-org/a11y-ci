@@ -1,17 +1,16 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.md">English</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/a11y-ci/readme.png" alt="a11y-ci logo" width="400" />
 </p>
-<h1 align="center">a11y-ci</h1>
 <p align="center">
-  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong><br/>
-  Part of <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+  <strong>CI gate for accessibility scorecards. Low-vision-first output.</strong>
 </p>
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/a11y-ci/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci"><img src="https://codecov.io/gh/mcp-tool-shop-org/a11y-ci/branch/main/graph/badge.svg" alt="Coverage" /></a>
   <a href="https://pypi.org/project/a11y-ci/"><img src="https://img.shields.io/pypi/v/a11y-ci" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://mcp-tool-shop-org.github.io/a11y-ci/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page" /></a>
@@ -21,16 +20,16 @@
 
 ## 为什么？
 
-可访问性代码检查（linting）只有在能够阻止代码回退（regression）时才有用。大多数团队会跳过它，因为没有一种原生 CI（持续集成）方式，可以在不产生大量误报或丢失回退信息的情况下，根据可访问性检查结果失败构建。
+可访问性代码检查（linting）只有在能够阻止代码回退（regressions）时才有用。大多数团队会跳过它，因为没有一种原生 CI（持续集成）方式，可以在不产生大量误报或丢失回退信息的情况下，根据可访问性问题导致构建失败。
 
 **a11y-ci** 弥补了这一差距：
 
-- 它可以处理由 [a11y-lint](https://pypi.org/project/a11y-lint/)（或任何兼容的 JSON 格式）生成的评分卡。
-- 它会根据严重程度、回退数量和新发现的检测结果进行判断。
-- 它支持时间限制的允许列表，以防止抑制（suppressions）永久生效。
-- 它以易于理解的 **问题/原因/解决方案** 格式输出所有结果。
+- 它可以读取由 [a11y-lint](https://pypi.org/project/a11y-lint/)（或任何兼容的 JSON 文件）生成的评分卡。
+- 它会根据严重程度、回退数量和新问题检测来控制构建流程。
+- 它支持临时允许列表，以防止抑制（suppressions）成为永久性的。
+- 它以低视力优先的 **问题/原因/解决方案** 格式输出所有结果。
 
-它不需要网络连接，完全可预测，可以在任何安装了 Python 的 CI 系统中运行。
+不进行任何网络请求。完全确定性。可以在任何具有 Python 的 CI 系统中运行。
 
 ## 安装
 
@@ -66,10 +65,10 @@ a11y-ci gate \
 ## 它能做什么
 
 | 功能 | 描述 |
-| ----------- | ------------- |
-| **Severity gate** | 如果任何发现的严重程度达到或超过配置的级别（默认：严重），则会失败。 |
-| **Baseline regression** | 将当前运行的结果与保存的基线进行比较；如果严重程度+ 的数量增加或出现新的严重程度+ ID，则会失败。 |
-| **Allowlist with expiry** | 暂时抑制已知的发现；到期的条目会自动导致检查失败。 |
+|-----------|-------------|
+| **Severity gate** | 如果任何问题符合或超过配置的严重程度（默认：严重），则会失败。 |
+| **Baseline regression** | 将当前运行与保存的基线进行比较；如果严重+问题数量增加或出现新的严重+问题 ID，则会失败。 |
+| **Allowlist with expiry** | 临时抑制已知问题；到期的条目会自动导致构建失败。 |
 | **Low-vision-first output** | 每个消息都遵循 `[OK]` / `[WARN]` / `[ERROR]` + 问题/原因/解决方案 的格式。 |
 
 ## 命令行参考
@@ -87,25 +86,25 @@ Options:
 
 ### 严重程度级别
 
-| Level | 使用场景 |
-| ------- | ------------- |
-| **critical（严重）** | 仅在出现会完全阻止用户使用的严重问题时才触发。 |
-| **serious（严重）** | 默认级别。阻止影响日常使用的障碍。 |
-| **moderate（中等）** | 更严格。包括可用性问题。 |
-| **minor（轻微）** | 最严格的实用级别。可以发现大多数问题。 |
-| **info（信息）** | 可以发现所有问题，包括信息性注释。 |
+| 级别 | 使用场景 |
+|-------|-------------|
+| **critical** | 仅阻止关键问题。 |
+| **serious** | 默认。阻止影响日常使用的障碍。 |
+| **moderate** | 更严格。包括可用性问题。 |
+| **minor** | 最严格的实用级别。可以捕获大多数问题。 |
+| **info** | 捕获所有问题，包括信息性注释。 |
 
 ## 退出码
 
-| Code | 含义 |
-| ------ | --------- |
-| `0` | 所有检查都通过 |
-| `2` | 输入或验证错误（无效的 JSON、缺少文件、模式不匹配） |
-| `3` | 策略检查失败（严重程度阈值、回退或到期的允许列表） |
+| 代码 | 含义 |
+|------|---------|
+| `0` | 所有检查均通过。 |
+| `2` | 输入或验证错误（无效的 JSON、缺少文件、模式不匹配）。 |
+| `3` | 策略检查失败（严重程度阈值、回退或到期的允许列表）。 |
 
 ## 输出格式
 
-每个消息都遵循易于理解的格式。任何消息都不会仅仅是状态码或晦涩的简短说明。
+每个消息都遵循低视力优先的格式。任何消息都不会仅仅是状态码或含糊不清的简短说明。
 
 ### 检查通过
 
@@ -158,13 +157,13 @@ Fix:
 
 ## 允许列表格式
 
-允许列表条目可以暂时抑制已知的发现。每个条目都需要：
+允许列表条目临时抑制已知问题。每个条目都需要：
 
-| Field | Type | 描述 |
-| ------- | ------ | ------------- |
-| `finding_id` | 字符串 | 要抑制的规则/发现 ID。 |
+| 字段 | 类型 | 描述 |
+|-------|------|-------------|
+| `finding_id` | 字符串 | 要抑制的规则/问题 ID。 |
 | `expires` | 字符串 | ISO 日期（yyyy-mm-dd）。到期的条目会导致检查失败。 |
-| `reason` | 字符串 | 至少 10 个字符，用于解释抑制的原因。 |
+| `reason` | 字符串 | 至少 10 个字符的说明，解释抑制的原因。 |
 
 ```json
 {
@@ -183,7 +182,7 @@ Fix:
 
 ## 评分卡格式
 
-a11y-ci 可以接受包含汇总计数或原始发现（或两者）的评分卡。
+a11y-ci 接受带有摘要计数或原始问题（或两者）的评分卡：
 
 ```json
 {
@@ -204,7 +203,7 @@ a11y-ci 可以接受包含汇总计数或原始发现（或两者）的评分卡
 }
 ```
 
-发现 ID 可以灵活地从 `id`、`rule_id`、`finding_id` 或 `code` 字段中提取。
+问题 ID 可以灵活地从 `id`、`rule_id`、`finding_id` 或 `code` 字段中提取。
 
 ## GitHub Actions 示例
 
@@ -268,15 +267,35 @@ Baseline JSON  ──► Compare counts + detect new IDs
 
 ## 相关工具
 
-| Tool | 描述 |
-| ------ | ------------- |
+| 工具 | 描述 |
+|------|-------------|
 | [a11y-lint](https://pypi.org/project/a11y-lint/) | 用于命令行输出的可访问性代码检查器（生成评分卡）。 |
-| [a11y-assist](https://pypi.org/project/a11y-assist/) | 针对 CLI 故障的低视力辅助工具。 |
+| [a11y-assist](https://pypi.org/project/a11y-assist/) | 用于命令行失败的低视力辅助工具。 |
+
+## 安全与数据范围
+
+- **访问的数据：** 从磁盘读取 JSON 评分卡文件。将问题与基线和允许列表进行比较。
+- **未访问的数据：** 不进行任何网络请求。没有遥测。没有用户数据存储。没有凭据或令牌。
+- **所需的权限：** 仅需要读取评分卡、基线和允许列表文件的权限。
+
+## 评分卡
+
+| 检查通过 | 状态 |
+|------|--------|
+| A. 安全基线 | 通过 |
+| B. 错误处理 | 通过 |
+| C. 操作员文档 | 通过 |
+| D. 发布流程 | 通过 |
+| E. 身份验证 | 通过 |
 
 ## 贡献
 
-请参考 [CONTRIBUTING.md](CONTRIBUTING.md) 了解贡献指南。
+请参考 [CONTRIBUTING.md](CONTRIBUTING.md) 获取贡献指南。
 
 ## 许可证
 
 MIT
+
+---
+
+由 <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a> 构建。
