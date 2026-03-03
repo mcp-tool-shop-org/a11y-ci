@@ -1,0 +1,2245 @@
+{
+  "version": 1,
+  "entries": {
+    "e8cddf057923e25a": {
+      "translation": "なぜですか。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "b39ebe08cf5f4032": {
+      "translation": "アクセシビリティに関するコードチェックは、問題の再発を防ぐ場合にのみ有効です。多くのチームがこのチェックを省略する理由は、CI環境でアクセシビリティの問題を検出し、ビルドを中断させるための、ネイティブな機能が存在しないからです。そうしないと、誤検出が多すぎたり、問題が発生した箇所に関する情報が失われたりする可能性があります。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "31d57fee43b86093": {
+      "translation": "**a11y-ci** は、その隔たりを埋めるためのツールです。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "bc767130ac91a51e": {
+      "translation": "- [a11y-lint](https://pypi.org/project/a11y-lint/) (または互換性のあるJSON形式) によって生成された評価レポートを読み込みます。\n- 深刻度、回帰の数、および新規発見の検出に基づいて評価を行います。\n- 一定期間のみ有効な許可リストをサポートしており、抑制設定が永続化されることはありません。\n- すべての結果を、視覚障碍者向けの「何が問題か / なぜ問題なのか / 修正方法」という形式で出力します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "c053115f7aa5ed9e": {
+      "translation": "ネットワーク接続は不要です。完全に決定論的な動作をします。Pythonが利用可能なCI環境であれば、どの環境でも動作します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "ea65604e8b784581": {
+      "translation": "インストールする。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "7d194b782b217cae": {
+      "translation": "Python 3.11以降のバージョンが必要です。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "d182d24c54cc50a7": {
+      "translation": "クイックスタートガイド",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "8b823a4b9bbe012a": {
+      "translation": "その機能・役割.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "6d79e09a5facab04": {
+      "translation": "能力",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "67731479bd4e364b": {
+      "translation": "説明",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "5267a4e52ef1849b": {
+      "translation": "申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "651826877e732548": {
+      "translation": "以下に翻訳します。\n-------------\n申し訳ありませんが、翻訳するテキストが提供されていません。テキストを入力してください。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "1a4da083b4b64a14": {
+      "translation": "設定された重大度（デフォルト：深刻）に達する、またはそれ以上の結果が見つかった場合、エラーが発生します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "c6a3f62050547f4d": {
+      "translation": "現在の実行結果を、保存された基準値と比較します。もし、重大なエラーの件数が増加した場合、または新しい重大なエラーIDが検出された場合は、エラーとなります。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "0513411c5770a69a": {
+      "translation": "既知の検出結果を一時的に抑制します。また、有効期限が切れたエントリは自動的に無効になります。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "eb7868a45c1a59ca": {
+      "translation": "すべてのメッセージは、`[OK]`、`[WARN]`、または`[ERROR]`に続いて、何が起こったのか、なぜ起こったのか、そしてどのように修正できるのかという情報が記載されています。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "0bee860796fc5461": {
+      "translation": "コマンドラインインターフェース（CLI）のリファレンス。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "5d87bff599688dda": {
+      "translation": "重要度レベル",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "80efdef41ffb4c81": {
+      "translation": "使用するタイミング。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "59196af31abc0d4d": {
+      "translation": "The company is committed to providing high-quality products and services.\n(会社は、高品質な製品とサービスを提供することに尽力しています。)\n-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "735105e8f2148b49": {
+      "translation": "批判的な\n重要な\n危機的な\n危険な\n厳密な\n詳細な\n批評的な\n評価する",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "8615995764ec094c": {
+      "translation": "ショーを止めるような問題に対してのみ対応します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "ebae698aa24dbecc": {
+      "translation": "深刻な\n重大な\n真剣な\n真面目な\n深刻\n重大\n真剣\n真面目",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "7da88511df079aa7": {
+      "translation": "デフォルト設定。日常的な利用に影響を与える制限をブロックします。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "0850eb94e46092d5": {
+      "translation": "適度な、穏やかな、中程度の。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "56d8ea106d1d422c": {
+      "translation": "より厳格な基準。使いやすさに関する問題も含まれます。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "681f518f349b0ffd": {
+      "translation": "軽微な、些細な。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "edafbaf9fbca36ff": {
+      "translation": "最も厳格な設定で、ほとんどの問題を検出します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "90efa6a122aab6c6": {
+      "translation": "**情報**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "0b7c87fa7ed9c6a3": {
+      "translation": "あらゆる情報をキャッチします。情報メモなども含まれます。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "2e22400e9cbba1b8": {
+      "translation": "終了コード",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "58123bdea582f8e2": {
+      "translation": "意味。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "69e70b451ff65bf9": {
+      "translation": "Certainly. Please provide the English text you would like me to translate.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "2a56d6ea96d9fd14": {
+      "translation": "Please provide the English text you would like me to translate. I am ready to translate it into Japanese.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "e1fbc38c6862cd6e": {
+      "translation": "すべての検査に合格しました。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "cf2d9b886b29810c": {
+      "translation": "入力エラーまたは検証エラー（不正なJSON形式、ファイルが見つからない、スキーマの不一致）。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "410c7bc628312184": {
+      "translation": "ポリシー適用に失敗しました（重大度基準、リグレッション、または有効期限切れの許可リスト）。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "b6e92da7631091b2": {
+      "translation": "成果型契約",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "3839c087c42957aa": {
+      "translation": "すべてのメッセージは、視覚障碍者の方にとって使いやすいように設計されています。メッセージは、単なるステータスコードや意味不明な短いメッセージとは決してなりません。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "a0c473d633e19025": {
+      "translation": "ゲート通過許可証",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "019fa6aaf084bfc8": {
+      "translation": "ゲートが故障しました。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "150bb71795b33245": {
+      "translation": "入力エラー",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "e7712c7af97533d3": {
+      "translation": "許可リストの形式。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "39607d27b4eaa3ff": {
+      "translation": "許可リストのエントリは、既知の検出結果を一時的に抑制します。各エントリには、以下の情報が必要です。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "eeb5ec4c81b50a6b": {
+      "translation": "文字列",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "dfb328d678c26909": {
+      "translation": "抑制対象となるルールまたは検出結果のID。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "b141e78a6d301b50": {
+      "translation": "ISOの日付形式（`yyyy-mm-dd`）。有効期限が切れたエントリは、検証プロセスに合格しません。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "4ec87a0f3c79f9ac": {
+      "translation": "抑圧に関する説明を、最低10文字で記述してください。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "057f12d9e2c5a3b0": {
+      "translation": "許可リストに登録された情報が期限切れになった場合、システムはそれを黙って無視することはありません。代わりに、エラーメッセージが表示され、どのエントリがいつ期限切れになったのかが明確に示されます。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214420
+    },
+    "3d1d72d6e3d3e14e": {
+      "translation": "スコアカードの形式。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "f69f93e3ce95ab52": {
+      "translation": "`a11y-ci`は、概要の数値データまたは詳細な調査結果（またはその両方）を含むレポートを受け付けます。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "23c7ed926bd4d47b": {
+      "translation": "IDは、`id`、`rule_id`、`finding_id`、または`code`のいずれかのフィールドから、柔軟に抽出されます。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "a43fc7dc4df77467": {
+      "translation": "GitHub Actions のサンプルコード。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "6f968b38a034b678": {
+      "translation": "基準値の更新。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "dfee6d504a33134f": {
+      "translation": "CLI（コマンドラインインターフェース）の出力内容を意図的に変更した場合は、基準値を更新してください。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "8e261d5674803a03": {
+      "translation": "動作原理",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "e197dc260ee3c1d2": {
+      "translation": "関連ツール",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "d2c358b43b16d746": {
+      "translation": "CLI（コマンドラインインターフェース）の出力におけるアクセシビリティをチェックするツール（評価レポートを作成します）。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "1f1d57fe9fbdfea3": {
+      "translation": "CLI（コマンドラインインターフェース）のエラー発生時に、視覚障碍者向けのサポート機能を提供します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "bd927c669c7a0d9c": {
+      "translation": "貢献について",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "a552719ad867058f": {
+      "translation": "詳細なガイドラインについては、[CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "08ea9dfbe36d981b": {
+      "translation": "ライセンス",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "f044c126a8902f11": {
+      "translation": "MITライセンス",
+      "model": "translategemma:12b",
+      "timestamp": 1772073214421
+    },
+    "9810d3815576feae": {
+      "translation": "为什么？",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "a987d43d3390b737": {
+      "translation": "可访问性代码检查（linting）只有在能够阻止代码回退（regression）时才有用。大多数团队会跳过它，因为没有一种原生 CI（持续集成）方式，可以在不产生大量误报或丢失回退信息的情况下，根据可访问性检查结果失败构建。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d2c447c30775eafc": {
+      "translation": "**a11y-ci** 弥补了这一差距：",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d9504c8337d7f99a": {
+      "translation": "- 它可以处理由 [a11y-lint](https://pypi.org/project/a11y-lint/)（或任何兼容的 JSON 格式）生成的评分卡。\n- 它会根据严重程度、回退数量和新发现的检测结果进行判断。\n- 它支持时间限制的允许列表，以防止抑制（suppressions）永久生效。\n- 它以易于理解的 **问题/原因/解决方案** 格式输出所有结果。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "4b0ec6a0b62a5e53": {
+      "translation": "它不需要网络连接，完全可预测，可以在任何安装了 Python 的 CI 系统中运行。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "ed61d0d109031128": {
+      "translation": "安装",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "a374ef78881f4299": {
+      "translation": "需要 Python 3.11 或更高版本。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "3e6394397900eaa1": {
+      "translation": "快速入门",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "1205c30fa0dcd4eb": {
+      "translation": "它能做什么",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "c7ad4830728f70cf": {
+      "translation": "功能",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "601d6e570e22e932": {
+      "translation": "描述",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "10198921144da1d7": {
+      "translation": "-----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "dd5b28ff24f8cbdb": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d0f19168ee50440e": {
+      "translation": "如果任何发现的严重程度达到或超过配置的级别（默认：严重），则会失败。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "52a150029277f936": {
+      "translation": "将当前运行的结果与保存的基线进行比较；如果严重程度+ 的数量增加或出现新的严重程度+ ID，则会失败。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "2c2f63f328320ec9": {
+      "translation": "暂时抑制已知的发现；到期的条目会自动导致检查失败。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "5339ad57ad028a04": {
+      "translation": "每个消息都遵循 `[OK]` / `[WARN]` / `[ERROR]` + 问题/原因/解决方案 的格式。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "57f75c53a122a4bc": {
+      "translation": "命令行参考",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "340973f9ebef0163": {
+      "translation": "严重程度级别",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "a6ad2bd517628215": {
+      "translation": "使用场景",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d75d743091909926": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "418cc1206f2e7305": {
+      "translation": "**critical（严重）**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "75f0b23d9f1a3d2b": {
+      "translation": "仅在出现会完全阻止用户使用的严重问题时才触发。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "ea3229189d3a8be7": {
+      "translation": "**serious（严重）**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "67424e205505826a": {
+      "translation": "默认级别。阻止影响日常使用的障碍。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "b0323754b6bb661e": {
+      "translation": "**moderate（中等）**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d60bde1c21307d96": {
+      "translation": "更严格。包括可用性问题。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "e39798f6284e7262": {
+      "translation": "**minor（轻微）**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "7803a6c13335cf20": {
+      "translation": "最严格的实用级别。可以发现大多数问题。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "521ff0f12be775ff": {
+      "translation": "**info（信息）**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "b2ae619ee06ddad8": {
+      "translation": "可以发现所有问题，包括信息性注释。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "7a04b47e3bc57a61": {
+      "translation": "退出码",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d92f14b6efff6a75": {
+      "translation": "含义",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "7b7596c3d1d0c899": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "3c50ad19fc6c359b": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "12f15c5a6372e631": {
+      "translation": "所有检查都通过",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "3a2c343b059919b7": {
+      "translation": "输入或验证错误（无效的 JSON、缺少文件、模式不匹配）",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "12d1be7da65e7146": {
+      "translation": "策略检查失败（严重程度阈值、回退或到期的允许列表）",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "e38ccc1e67453ba1": {
+      "translation": "输出格式",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "7e341031dde6cedd": {
+      "translation": "每个消息都遵循易于理解的格式。任何消息都不会仅仅是状态码或晦涩的简短说明。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d11c74941ee506f6": {
+      "translation": "检查通过",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "39378d9c4b00eb4f": {
+      "translation": "检查失败",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "756aefa98c6d779b": {
+      "translation": "输入错误",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "c0f8c578f9eea64e": {
+      "translation": "允许列表格式",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "a0d0d89477bf2ddc": {
+      "translation": "允许列表条目可以暂时抑制已知的发现。每个条目都需要：",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "64deda196c6a7d04": {
+      "translation": "字符串",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "018a88abc565a5ff": {
+      "translation": "要抑制的规则/发现 ID。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "d2e5042a81a93b9d": {
+      "translation": "ISO 日期（yyyy-mm-dd）。到期的条目会导致检查失败。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "1c34d90d58ff0051": {
+      "translation": "至少 10 个字符，用于解释抑制的原因。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "95d7753470d7dae2": {
+      "translation": "到期的允许列表条目不会被静默忽略。它们会失败，并显示一条明确的消息，说明哪个条目已过期以及过期时间。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "f9e6066336655edd": {
+      "translation": "评分卡格式",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "cf14b362bee2c12b": {
+      "translation": "a11y-ci 可以接受包含汇总计数或原始发现（或两者）的评分卡。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "4fea95caadbc9d45": {
+      "translation": "发现 ID 可以灵活地从 `id`、`rule_id`、`finding_id` 或 `code` 字段中提取。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "08ae215bd1136c86": {
+      "translation": "GitHub Actions 示例",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "b9160dcac7809f33": {
+      "translation": "更新基线",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "4b12695be6d5a720": {
+      "translation": "当您有意更改命令行输出时，请更新基线：",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "fb14752ffb561cd1": {
+      "translation": "工作原理",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "8144f82a3f37edb0": {
+      "translation": "相关工具",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "9ef0af0183878b51": {
+      "translation": "用于命令行输出的可访问性代码检查器（生成评分卡）。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "ebcdeac296ef4b2d": {
+      "translation": "针对 CLI 故障的低视力辅助工具。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "f24c2aff2448e6af": {
+      "translation": "贡献",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "0ddcf2cf0f708b11": {
+      "translation": "请参考 [CONTRIBUTING.md](CONTRIBUTING.md) 了解贡献指南。",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "1fb815b9a436fadb": {
+      "translation": "许可证",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247364
+    },
+    "6325e155e3ad88d6": {
+      "translation": "MIT",
+      "model": "translategemma:12b",
+      "timestamp": 1772073247365
+    },
+    "5d816d36d89fe697": {
+      "translation": "¿Por qué?",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "face23eb8d70dfec": {
+      "translation": "La verificación de accesibilidad solo es útil si evita regresiones. La mayoría de los equipos la omiten porque no existe una forma nativa de fallar una compilación debido a problemas de accesibilidad sin generar demasiados falsos positivos o perder el contexto de qué regresiones se han producido.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "58e7afae9a244403": {
+      "translation": "**a11y-ci** soluciona esa brecha:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "94dee0f05a16802b": {
+      "translation": "- Consume informes generados por [a11y-lint](https://pypi.org/project/a11y-lint/) (o cualquier formato JSON compatible).\n- Evalúa la gravedad, el número de regresiones y la detección de nuevos problemas.\n- Admite listas de permisos temporales para que las supresiones nunca sean permanentes.\n- Muestra cada resultado en el formato **¿Qué / Por qué / Solución** priorizando la accesibilidad para personas con baja visión.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "10595d70eab950bf": {
+      "translation": "No realiza llamadas a la red. Es completamente determinista. Funciona en cualquier sistema de integración continua que tenga Python.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "144b06b61516beec": {
+      "translation": "Instalación",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "02a5d530cfa58fee": {
+      "translation": "Requiere Python 3.11 o posterior.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "785321ff8279266b": {
+      "translation": "Guía rápida",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "ae17127862c8bc41": {
+      "translation": "¿Qué hace?",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "dfa21a92f71fb336": {
+      "translation": "Capacidad",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "a0102622d03d4c0f": {
+      "translation": "Descripción",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "8d960fb67d9cab35": {
+      "translation": "-----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "184e6ce2c9237895": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "d1ec501dabed3351": {
+      "translation": "Falla si algún problema cumple o supera la gravedad configurada (por defecto: grave).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "8db07adda9e3a336": {
+      "translation": "Compara la ejecución actual con una línea de base guardada; falla si el número de problemas graves aumenta o aparecen nuevos identificadores de problemas graves.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "bf3a42666a5427a7": {
+      "translation": "Suprime temporalmente los problemas conocidos; las entradas caducadas fallan automáticamente la verificación.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "0c6fccf90331b871": {
+      "translation": "Cada mensaje sigue el contrato `[OK]/[ADVERTENCIA]/[ERROR]` + ¿Qué/Por qué/Solución.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "cb8fca959ef231a9": {
+      "translation": "Referencia de la interfaz de línea de comandos (CLI)",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "571b70bc40bb904b": {
+      "translation": "Niveles de gravedad",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "5160fdefe2a39dcc": {
+      "translation": "Cuándo usar",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "58e46b91ebfb210e": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "42fd1698b9170b63": {
+      "translation": "**crítico**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "2deb3d2150855e60": {
+      "translation": "Solo bloquea problemas críticos.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "fdf3992a2170a091": {
+      "translation": "**grave**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "31aef52702f7169d": {
+      "translation": "Por defecto. Bloquea problemas que afectan el uso diario.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289264
+    },
+    "4259c7a1154cbdfc": {
+      "translation": "**moderado**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "9a955a9f31bfcb69": {
+      "translation": "Más estricto. Incluye problemas de usabilidad.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "4ddab8a92ffc7745": {
+      "translation": "**menor**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "57773af9c0a3b590": {
+      "translation": "El más estricto en la práctica. Detecta la mayoría de los problemas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "e709e6880f5fc979": {
+      "translation": "**información**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "97c7a0ee8dcd0a65": {
+      "translation": "Detecta todo, incluidas las notas informativas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "ead6d0852bab11de": {
+      "translation": "Códigos de salida",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "a9e0b03a532423f7": {
+      "translation": "Significado",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "4110d0f8faecdeab": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "f2088caa76d4a948": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "079fcee2f00c10d6": {
+      "translation": "Todas las verificaciones pasaron.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "8c531088c8b025a8": {
+      "translation": "Error de entrada o validación (JSON incorrecto, archivo faltante, falta de coincidencia de esquema).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "690b9103ff8bb05d": {
+      "translation": "La verificación falló (umbral de gravedad, regresión o lista de permisos caducada).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "95b25395fd34fc25": {
+      "translation": "Contrato de salida",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "34f5024bbba5e008": {
+      "translation": "Cada mensaje sigue el contrato de accesibilidad para personas con baja visión. Ningún mensaje es solo un código de estado o una línea críptica.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "a5e29db5819080fd": {
+      "translation": "Verificación superada",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "027d3b4dc848c95e": {
+      "translation": "Verificación fallida",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "667583f35acdcf2f": {
+      "translation": "Errores de entrada",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "089fcde06ded3a42": {
+      "translation": "Formato de la lista de permisos",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "a0721499bf607c48": {
+      "translation": "Las entradas de la lista de permisos suprimen temporalmente los problemas conocidos. Cada entrada requiere:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "9fa8832272036327": {
+      "translation": "cadena de texto",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "d5902600ab48b660": {
+      "translation": "El ID de la regla/problema a suprimir.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "52119e2ac94aa071": {
+      "translation": "Fecha en formato ISO (`aaaa-mm-dd`). Las entradas caducadas fallan la verificación.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "07e7c054c191f19d": {
+      "translation": "Mínimo de 10 caracteres que expliquen la supresión.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "c635e6901570d136": {
+      "translation": "Las entradas caducadas de la lista de permisos no se ignoran silenciosamente. Fallan la verificación con un mensaje claro que explica qué entrada caducó y cuándo.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "282ffcc3b5f4b4fa": {
+      "translation": "Formato del informe",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "58c0efc6aefbbfbf": {
+      "translation": "a11y-ci acepta informes con recuentos resumidos o problemas individuales (o ambos):",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "c7ac4d0cd25eb21d": {
+      "translation": "Los ID de los problemas se extraen de forma flexible de los campos `id`, `rule_id`, `finding_id` o `code`.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "023c0b94c75850d8": {
+      "translation": "Ejemplo para GitHub Actions",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "8969302853aacb69": {
+      "translation": "Actualización de la línea de base",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "f8bf0dd6a6775f2e": {
+      "translation": "Cuando cambie intencionalmente la salida de la CLI, actualice la línea de base:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "b85c1ae2a3223f6a": {
+      "translation": "Cómo funciona",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "0f41ad3c04ca8ec5": {
+      "translation": "Herramientas complementarias",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "b3caf76ef7eae195": {
+      "translation": "Verificador de accesibilidad para la salida de la CLI (genera informes).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "475a448d50a504aa": {
+      "translation": "Asistente para usuarios con baja visión, diseñado para solucionar problemas en CLI.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "7bdc45e8ddfa02fc": {
+      "translation": "Contribuciones",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "2cad16224cad7ba4": {
+      "translation": "Consulte el archivo [CONTRIBUTING.md](CONTRIBUTING.md) para obtener las directrices.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "9572f74b6d3f62b1": {
+      "translation": "Licencia",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "ed7f97ee046bbb09": {
+      "translation": "MIT",
+      "model": "translategemma:12b",
+      "timestamp": 1772073289265
+    },
+    "f80fd7f517f0a656": {
+      "translation": "Pourquoi",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "61f6ba4136c90e8d": {
+      "translation": "L'analyse de l'accessibilité n'est utile que si elle permet d'éviter les régressions. La plupart des équipes l'ignorent car il n'existe pas de moyen natif dans les systèmes d'intégration continue (CI) pour signaler un échec de la compilation en raison de problèmes d'accessibilité, sans être submergé par de faux positifs ou sans perdre le contexte de ce qui a changé.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "e172e76acbc728cb": {
+      "translation": "**a11y-ci** comble cette lacune :",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "867dacb8fd5af223": {
+      "translation": "- Il utilise les rapports produits par [a11y-lint](https://pypi.org/project/a11y-lint/) (ou tout fichier JSON compatible).\n- Il vérifie la gravité, le nombre de régressions et la détection de nouvelles anomalies.\n- Il prend en charge des listes d'exceptions temporaires pour éviter que les suppressions ne deviennent permanentes.\n- Il affiche chaque résultat dans le format **Quoi / Pourquoi / Solution** axé sur les personnes ayant une déficience visuelle.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "c2cf4d49946b71ed": {
+      "translation": "Aucun appel réseau. Entièrement déterministe. Fonctionne dans tout système CI qui dispose de Python.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "6c946ac8441b05e9": {
+      "translation": "Installation",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "291e0ffcc0e46bb6": {
+      "translation": "Nécessite Python 3.11 ou une version ultérieure.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "caef1b750e85e405": {
+      "translation": "Démarrage rapide",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "d041bf8cfafd448a": {
+      "translation": "Ce que cela fait",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "2d2b72f0d49cde6b": {
+      "translation": "Capacité",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "9a51c5b4f05710c0": {
+      "translation": "Description",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "d342ebe446ad84bf": {
+      "translation": "-----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "42738f280dbf39b2": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "bc70ec366aba8e4d": {
+      "translation": "Échec si une anomalie atteint ou dépasse la gravité configurée (par défaut : grave).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "e9ac197d873c9c71": {
+      "translation": "Compare l'exécution actuelle à une référence sauvegardée ; échec si le nombre d'anomalies graves augmente ou si de nouvelles anomalies graves apparaissent.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "6c47c8b150ca384a": {
+      "translation": "Supprime temporairement les anomalies connues ; les entrées expirées échouent automatiquement la vérification.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "e7c927bfd0a8d875": {
+      "translation": "Chaque message suit le contrat `[OK]/[WARN]/[ERROR]` + Quoi/Pourquoi/Solution.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "dcfe029d45dc336a": {
+      "translation": "Référence de l'interface en ligne de commande (CLI)",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "16c4489b1b2781d1": {
+      "translation": "Niveaux de gravité",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "ffb80514ab13457b": {
+      "translation": "Quand utiliser",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "b8a31ebdae787756": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "bdbfdeae31387cc2": {
+      "translation": "**critique**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "41268611c2f71966": {
+      "translation": "Ne bloque que les problèmes bloquants.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "f8843fa907aaa86d": {
+      "translation": "**grave**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "9337ec22b8dc132d": {
+      "translation": "Par défaut. Bloque les problèmes qui affectent l'utilisation quotidienne.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "d8bbf310699ea22c": {
+      "translation": "**modéré**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333666
+    },
+    "7be07e08f55a443e": {
+      "translation": "Plus strict. Inclut les problèmes d'utilisabilité.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "5b01b4cd2e6e3a0f": {
+      "translation": "**mineur**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "e8dd890faf543765": {
+      "translation": "Le plus strict possible. Détecte la plupart des problèmes.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "1907f507fa927e8d": {
+      "translation": "**information**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "1f53a74ed8db43c0": {
+      "translation": "Détecte tout, y compris les notes d'information.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "ea3b5c49e509bd45": {
+      "translation": "Codes de sortie",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "785c7a450a789477": {
+      "translation": "Signification",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "86d5118e773cafab": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "9c7087410e6c6801": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "74457fce58b5836c": {
+      "translation": "Toutes les vérifications ont réussi.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "7fbf8e3c9589e9dc": {
+      "translation": "Erreur d'entrée ou de validation (JSON incorrect, fichier manquant, incompatibilité de schéma).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "874382dcc4d7b75e": {
+      "translation": "La vérification a échoué (seuil de gravité, régressions ou liste d'exceptions expirée).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "9f1d8158b89a86a9": {
+      "translation": "Contrat de sortie",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "e7d5d0669616dffe": {
+      "translation": "Chaque message suit le contrat axé sur les personnes ayant une déficience visuelle. Aucun message n'est simplement un code de statut ou une phrase énigmatique.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "5104814856560fb1": {
+      "translation": "La vérification réussit.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "1c11335856bf3158": {
+      "translation": "La vérification échoue.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "d89fa4e3f844333c": {
+      "translation": "Erreurs d'entrée.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "1ad8de3e9676a2b4": {
+      "translation": "Format de la liste d'exceptions",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "4e968312fbe09150": {
+      "translation": "Les entrées de la liste d'exceptions suppriment temporairement les anomalies connues. Chaque entrée nécessite :",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "18d2448e93e21d3d": {
+      "translation": "chaîne de caractères",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "43d3106d82294c0e": {
+      "translation": "L'ID de la règle/de l'anomalie à supprimer.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "cb9e1d1ad39ac962": {
+      "translation": "Date au format ISO (`AAAA-MM-JJ`). Les entrées expirées échouent la vérification.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "df790a825f7208dd": {
+      "translation": "Au moins 10 caractères expliquant la suppression.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "e30e3aa3fd6a5472": {
+      "translation": "Les entrées expirées de la liste d'exceptions ne sont pas ignorées silencieusement. Elles échouent la vérification avec un message clair indiquant quelle entrée a expiré et quand.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "24458ebf61d3570d": {
+      "translation": "Format du rapport",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "e45ec2b211726a50": {
+      "translation": "a11y-ci accepte les rapports contenant soit des nombres récapitulatifs, soit des anomalies brutes (ou les deux) :",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "f15bb8ac6bd31b30": {
+      "translation": "Les ID des anomalies sont extraits de manière flexible des champs `id`, `rule_id`, `finding_id` ou `code`.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "cb791a8ff68daed4": {
+      "translation": "Exemple pour GitHub Actions",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "053950f93511b5f8": {
+      "translation": "Mise à jour de la référence",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "e4fc5121b13972f2": {
+      "translation": "Lorsque vous modifiez intentionnellement la sortie de l'interface en ligne de commande, mettez à jour la référence :",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "06cc191e2d30a1b3": {
+      "translation": "Fonctionnement",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "4733e517374868e4": {
+      "translation": "Outils complémentaires",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "09be27c2568d3850": {
+      "translation": "Analyseur d'accessibilité pour la sortie de l'interface en ligne de commande (génère des rapports).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "f508182c6187c249": {
+      "translation": "Assistant pour les utilisateurs ayant une faible vision, conçu pour gérer les erreurs de CLI.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "262cf60b803dacd5": {
+      "translation": "Contribution",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "0c9be19af14b9ae7": {
+      "translation": "Consultez le fichier [CONTRIBUTING.md](CONTRIBUTING.md) pour connaître les directives.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "0174ffc9d6992c72": {
+      "translation": "Licence",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "9d6e22ae9823640e": {
+      "translation": "MIT",
+      "model": "translategemma:12b",
+      "timestamp": 1772073333667
+    },
+    "04d49f6a9c899e5b": {
+      "translation": "क्यों",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "75dc85ec1c947ef4": {
+      "translation": "एक्सेसिबिलिटी लिंटिंग केवल तभी उपयोगी होती है जब यह पुरानी समस्याओं को ठीक करने में मदद करे। अधिकांश टीमें इसका उपयोग नहीं करती हैं क्योंकि कोई भी ऐसा सीधा तरीका नहीं है जिससे बिल्ड को एक्सेसिबिलिटी संबंधी समस्याओं के कारण विफल किया जा सके, बिना झूठी त्रुटियों के या यह जाने बिना कि किस चीज में समस्या है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "ec72f548c58134cb": {
+      "translation": "**a11y-ci** इस अंतर को पाटता है:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "54df203802ea27f3": {
+      "translation": "- यह [a11y-lint](https://pypi.org/project/a11y-lint/) (या किसी भी संगत JSON) द्वारा उत्पन्न स्कोरकार्ड का उपयोग करता है।\n- यह गंभीरता, पुरानी समस्याओं की संख्या और नई समस्याओं का पता लगाने पर आधारित होता है।\n- यह अस्थायी रूप से समस्याओं को अनदेखा करने की अनुमति देता है, ताकि उन्हें स्थायी रूप से न हटाया जाए।\n- यह प्रत्येक परिणाम को \"समस्या/कारण/समाधान\" प्रारूप में प्रदर्शित करता है, जो दृष्टिबाधित लोगों के लिए उपयुक्त है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "e0ebbc542e2ede30": {
+      "translation": "इसमें नेटवर्क कनेक्शन की आवश्यकता नहीं होती है। यह पूरी तरह से विश्वसनीय है। यह किसी भी CI सिस्टम पर चलता है जिसमें पायथन स्थापित है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "7670bd721a08293f": {
+      "translation": "इंस्टॉलेशन",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "3c0dafda645c6e1d": {
+      "translation": "इसके लिए पायथन 3.11 या उसके बाद के संस्करण की आवश्यकता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "abb619d8b0588257": {
+      "translation": "शुरुआत कैसे करें",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "8a62aaf44e492faf": {
+      "translation": "यह क्या करता है",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "4525925cb2464f38": {
+      "translation": "क्षमता",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "b8423b5b4842cbda": {
+      "translation": "विवरण",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "03eb21bf393bcd87": {
+      "translation": "-----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "bc35e1f9228e8622": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "701038658d4c4da5": {
+      "translation": "यदि कोई भी समस्या कॉन्फ़िगर की गई गंभीरता (डिफ़ॉल्ट: गंभीर) या उससे अधिक की है, तो यह विफल हो जाता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "62f988f6955acec7": {
+      "translation": "यह वर्तमान रन की तुलना सहेजे गए बेसलाइन से करता है; यदि गंभीर समस्याओं की संख्या बढ़ती है या नई गंभीर समस्याएं दिखाई देती हैं, तो यह विफल हो जाता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "33f73a1575c085f4": {
+      "translation": "यह ज्ञात समस्याओं को अस्थायी रूप से अनदेखा करता है; समय सीमा समाप्त होने पर, ये प्रविष्टियां स्वचालित रूप से विफल हो जाती हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "640d970838c7fd59": {
+      "translation": "प्रत्येक संदेश `[OK]`/`[WARN]`/`[ERROR]` + समस्या/कारण/समाधान प्रारूप का पालन करता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "7b1826aed8f8aef2": {
+      "translation": "कमांड-लाइन इंटरफ़ेस (CLI) संदर्भ",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "d545e8c785bf4be9": {
+      "translation": "गंभीरता स्तर",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "c93c8cd30ae5d286": {
+      "translation": "कब उपयोग करें",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "6da5100c388f6595": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "adff6593c9ebf3e3": {
+      "translation": "**गंभीर (critical)**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "953f533694591d31": {
+      "translation": "केवल उन समस्याओं को ब्लॉक करें जो काम करने में बाधा डालती हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "cbaf0220a0b03d09": {
+      "translation": "**गंभीर (serious)**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "8b9a002b43f5149a": {
+      "translation": "डिफ़ॉल्ट। उन समस्याओं को ब्लॉक करता है जो दैनिक उपयोग को प्रभावित करती हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "863b6eee8984a27a": {
+      "translation": "**मध्यम (moderate)**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "7edade325bfbb8cd": {
+      "translation": "अधिक सख्त। इसमें उपयोगिता संबंधी समस्याओं को शामिल किया गया है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "fa96bf4904394007": {
+      "translation": "**मामूली (minor)**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "8023247ab833d376": {
+      "translation": "सबसे सख्त व्यावहारिक स्तर। अधिकांश समस्याओं का पता लगाता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "eaedf3a43bf957b9": {
+      "translation": "**जानकारी (info)**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "f9c0f281ca4efc3a": {
+      "translation": "सभी चीजों का पता लगाता है, जिसमें सूचनात्मक टिप्पणियां भी शामिल हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "92abed1747d9195a": {
+      "translation": "एग्जिट कोड",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "8e6cc4fa69314024": {
+      "translation": "अर्थ",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379677
+    },
+    "1cb2d43271f2ec1d": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "1a20fc4dc8ce3304": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "cb4bd56108195459": {
+      "translation": "सभी जांच पास हो गईं",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "49b71734e80d9c2f": {
+      "translation": "इनपुट या सत्यापन त्रुटि (खराब JSON, गुम फ़ाइल, स्कीमा मिसमैच)",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "7841e302867bf775": {
+      "translation": "नीति विफल हो गई (गंभीरता सीमा, पुरानी समस्या, या समय सीमा समाप्त हो चुकी अनदेखी प्रविष्टि)",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "594723ebdb1b12a3": {
+      "translation": "आउटपुट प्रारूप",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "14efbf124330d19a": {
+      "translation": "प्रत्येक संदेश दृष्टिबाधित लोगों के लिए उपयुक्त प्रारूप का पालन करता है। कोई भी संदेश केवल एक स्थिति कोड या अस्पष्ट वाक्य नहीं होता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "850b93038f4303e1": {
+      "translation": "जांच पास हो गई",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "989928d2dafedea8": {
+      "translation": "जांच विफल हो गई",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "2527127759e30537": {
+      "translation": "इनपुट त्रुटियां",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "b20b601b17385998": {
+      "translation": "अनदेखी प्रारूप",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "044fd7129ccefd73": {
+      "translation": "अनदेखी प्रविष्टियां ज्ञात समस्याओं को अस्थायी रूप से अनदेखा करती हैं। प्रत्येक प्रविष्टि के लिए निम्नलिखित जानकारी आवश्यक है:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "26fe68d9da86d1d7": {
+      "translation": "string (स्ट्रिंग)",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "85186e0200a24b64": {
+      "translation": "उस नियम/समस्या का आईडी जिसे अनदेखा किया जाना है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "070a41062be9e8f0": {
+      "translation": "ISO तिथि (`yyyy-mm-dd`)। समय सीमा समाप्त होने पर, प्रविष्टियां विफल हो जाती हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "abf5a2de95597394": {
+      "translation": "कम से कम 10 अक्षरों का विवरण जो अनदेखी का कारण बताता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "dd9711f4d8814695": {
+      "translation": "समय सीमा समाप्त होने वाली अनदेखी प्रविष्टियों को चुपचाप अनदेखा नहीं किया जाता है। वे एक स्पष्ट संदेश के साथ विफल हो जाती हैं जो बताती है कि कौन सी प्रविष्टि समाप्त हो गई और कब।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "3cfe9bfe845b4619": {
+      "translation": "स्कोरकार्ड प्रारूप",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "d17cceb430117779": {
+      "translation": "a11y-ci सारांश गणना या कच्चे डेटा (या दोनों) वाले स्कोरकार्ड स्वीकार करता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "ce3e48c0b14f56b3": {
+      "translation": "समस्या आईडी को `id`, `rule_id`, `finding_id`, या `code` फ़ील्ड से लचीले ढंग से निकाला जाता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "3f63e66c1f94b48f": {
+      "translation": "GitHub Actions का उदाहरण",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "f5774bad728e6c61": {
+      "translation": "बेसलाइन को अपडेट करना",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "e0775e79b49a681d": {
+      "translation": "जब आप जानबूझकर CLI आउटपुट बदलते हैं, तो बेसलाइन को अपडेट करें:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "8fea77af1ed0a2e1": {
+      "translation": "यह कैसे काम करता है",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "a1227a2873915706": {
+      "translation": "सहायक उपकरण",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "7de91c7b538a261d": {
+      "translation": "CLI आउटपुट के लिए एक्सेसिबिलिटी लिंटर (स्कोरकार्ड उत्पन्न करता है)",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "d969974df99da8e0": {
+      "translation": "कम दृष्टि वाले उपयोगकर्ताओं के लिए, CLI (कमांड लाइन इंटरफेस) विफलताओं में सहायक उपकरण।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "4e8133210bd702a6": {
+      "translation": "योगदान",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "df87bf558ca13f03": {
+      "translation": "मार्गदर्शिका के लिए, [CONTRIBUTING.md](CONTRIBUTING.md) देखें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "cfbc372f8058f151": {
+      "translation": "लाइसेंस",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "8a691ee81405175f": {
+      "translation": "MIT",
+      "model": "translategemma:12b",
+      "timestamp": 1772073379678
+    },
+    "4c0c64056baf3061": {
+      "translation": "Perché",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "4f17234a4c140a79": {
+      "translation": "L'analisi dell'accessibilità è utile solo se previene regressioni. La maggior parte dei team la ignora perché non esiste un modo nativo per far fallire una build a causa di problemi di accessibilità senza generare un numero eccessivo di falsi positivi o perdere il contesto di ciò che è regredito.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "efe03b85233fe535": {
+      "translation": "**a11y-ci** colma questa lacuna:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "cf2b9955c080095d": {
+      "translation": "- Utilizza i report prodotti da [a11y-lint](https://pypi.org/project/a11y-lint/) (o qualsiasi file JSON compatibile).\n- Valuta la gravità, il numero di regressioni e la rilevazione di nuove problematiche.\n- Supporta liste di esclusione temporanee, in modo che le soppressioni non diventino permanenti.\n- Visualizza ogni risultato nel formato **Cosa / Perché / Soluzione**, con priorità per le persone con problemi di vista.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "658847a77f73c83f": {
+      "translation": "Non effettua chiamate di rete. Completamente deterministico. Funziona in qualsiasi sistema CI che abbia Python.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "ff5580523b6052cc": {
+      "translation": "Installazione",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "05bcf07a1a33115e": {
+      "translation": "Richiede Python 3.11 o versioni successive.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "d7e9780fb2074bec": {
+      "translation": "Guida rapida",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "2dc88d057af4a8f1": {
+      "translation": "Cosa fa",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "3f962d0e1c26941b": {
+      "translation": "Funzionalità",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "3af38881e7f28db0": {
+      "translation": "Descrizione",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "b7dd8da33d76c15e": {
+      "translation": "-----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "5acc6809afb159f0": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "dccffc3e28554e14": {
+      "translation": "Fallisce se qualsiasi riscontro supera o raggiunge la gravità configurata (predefinito: grave).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "cd9ad3c709f2d8ee": {
+      "translation": "Confronta l'esecuzione corrente con una baseline salvata; fallisce se il numero di riscontri gravi aumenta o se compaiono nuovi ID di riscontri gravi.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "64c5108d7b720390": {
+      "translation": "Sopprime temporaneamente i riscontri noti; le voci scadute falliscono automaticamente la verifica.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "1381cfcc5e6ce40f": {
+      "translation": "Ogni messaggio segue il contratto `[OK]/[AVVERTIMENTO]/[ERRORE]` + Cosa/Perché/Soluzione.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "7c7e200097ac45dd": {
+      "translation": "Riferimento della CLI",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "eb12a61d2ab59c89": {
+      "translation": "Livelli di gravità",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "9efc329236764a33": {
+      "translation": "Quando utilizzarlo",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "4f16a25e942668c8": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "348d484120d0cfaf": {
+      "translation": "**critico**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "ee8e65657f2651db": {
+      "translation": "Blocca solo i problemi che impediscono il funzionamento.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "8c3da0f516ae2b4e": {
+      "translation": "**grave**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "8ea70afcd220f938": {
+      "translation": "Predefinito. Blocca i problemi che influiscono sull'uso quotidiano.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "024b9d3b50f5b53a": {
+      "translation": "**moderato**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "af708302bf72a278": {
+      "translation": "Più restrittivo. Include problemi di usabilità.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "64b782d50647f0a5": {
+      "translation": "**minore**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "6cc499c96cd93499": {
+      "translation": "Il più restrittivo possibile. Rileva la maggior parte dei problemi.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "993038a9030db98d": {
+      "translation": "**informazione**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "c03743fd86422475": {
+      "translation": "Rileva tutto, comprese le note informative.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "84b4e4ea8e580337": {
+      "translation": "Codici di uscita",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "69fb964a4ef1e52e": {
+      "translation": "Significato",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423293
+    },
+    "a8e2cbb75c81ee97": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "859008cc19c8d7e4": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "629a2167aea4487d": {
+      "translation": "Tutti i controlli superati",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "4812ad517f8aacd0": {
+      "translation": "Errore di input o di validazione (JSON non valido, file mancante, incompatibilità dello schema).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "0957911bf4547a12": {
+      "translation": "La verifica fallisce (soglia di gravità, regressione o lista di esclusione scaduta).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "352d9906fd8dedf6": {
+      "translation": "Contratto di output",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "4456d74232c54d0b": {
+      "translation": "Ogni messaggio segue il contratto con priorità per le persone con problemi di vista. Nessun messaggio è semplicemente un codice di stato o una breve descrizione criptica.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "119919039967edef": {
+      "translation": "La verifica passa",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "7080d9459e5647bc": {
+      "translation": "La verifica fallisce",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "878840aa8dafa213": {
+      "translation": "Errori di input",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "82dc5595c5d914c3": {
+      "translation": "Formato della lista di esclusione",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "12e8049df6e2288c": {
+      "translation": "Le voci della lista di esclusione sopprimono temporaneamente i riscontri noti. Ogni voce richiede:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "e8c8ba5a13d29779": {
+      "translation": "stringa",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "f13b457042733056": {
+      "translation": "L'ID della regola/del riscontro da sopprimere.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "c1eb89d367d36390": {
+      "translation": "Data in formato ISO (`aaaa-mm-gg`). Le voci scadute falliscono la verifica.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "9f85866049b8ae55": {
+      "translation": "Almeno 10 caratteri che spiegano la soppressione.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "7b3b112c921636e1": {
+      "translation": "Le voci scadute della lista di esclusione non vengono ignorate silenziosamente. Falliscono la verifica con un messaggio chiaro che indica quale voce è scaduta e quando.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "acebd5bef1cad064": {
+      "translation": "Formato del report",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "ab028a45a3d989c4": {
+      "translation": "a11y-ci accetta report con conteggi riassuntivi o riscontri dettagliati (o entrambi):",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "29c9a59ef7f672b6": {
+      "translation": "Gli ID dei riscontri vengono estratti in modo flessibile dai campi `id`, `rule_id`, `finding_id` o `code`.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "b0fbcc3a9d02de9a": {
+      "translation": "Esempio per GitHub Actions",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "eeaf0433febf0e48": {
+      "translation": "Aggiornamento della baseline",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "55c9f8e61a7ba040": {
+      "translation": "Quando si modificano intenzionalmente gli output della CLI, aggiornare la baseline:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "7fde6e9735784ed4": {
+      "translation": "Come funziona",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "235e3e75df960f6a": {
+      "translation": "Strumenti complementari",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "7f2376555cfef84a": {
+      "translation": "Analizzatore di accessibilità per gli output della CLI (genera report).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "0168886864fb203c": {
+      "translation": "Assistente per utenti con problemi di vista, progettato per gestire errori nell'interfaccia a riga di comando (CLI).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "137a2378c67aaccf": {
+      "translation": "Contributi",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "1054dc469dcab9ec": {
+      "translation": "Consultare il file [CONTRIBUTING.md](CONTRIBUTING.md) per le linee guida.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "0870aa1dcfea97cc": {
+      "translation": "Licenza",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "cf7d056fb6111803": {
+      "translation": "MIT",
+      "model": "translategemma:12b",
+      "timestamp": 1772073423294
+    },
+    "739de2da43412225": {
+      "translation": "Por que",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "083a224116110e3c": {
+      "translation": "A análise de acessibilidade é útil apenas se impede regressões. A maioria das equipes a ignora porque não existe uma maneira nativa de falhar uma compilação devido a problemas de acessibilidade, sem gerar muitos falsos positivos ou perder o contexto do que foi alterado.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "377f5c7fdc420ff6": {
+      "translation": "O **a11y-ci** preenche essa lacuna:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "10d4933900e20c35": {
+      "translation": "- Lê os relatórios gerados por [a11y-lint](https://pypi.org/project/a11y-lint/) (ou qualquer arquivo JSON compatível).\n- Avalia a gravidade, a regressão no número de ocorrências e a detecção de novas ocorrências.\n- Suporta listas de permissão temporárias para que as supressões nunca se tornem permanentes.\n- Exibe todos os resultados no formato **O que / Por que / Solução**, priorizando a experiência de usuários com baixa visão.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "81e55f5e4706db09": {
+      "translation": "Não faz chamadas de rede. É totalmente determinístico. Funciona em qualquer sistema de integração contínua que tenha Python.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "4898ae5813bd2bb7": {
+      "translation": "Instalação",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "230508fdc0230fa6": {
+      "translation": "Requer Python 3.11 ou superior.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "c88bcdb0dd505b6b": {
+      "translation": "Início Rápido",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "ef1986c4e1b8eee6": {
+      "translation": "O que ele faz",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "85fad4dea34d0c76": {
+      "translation": "Funcionalidade",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "4fe83802bbc45fcc": {
+      "translation": "Descrição",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "d94afbcff5759c30": {
+      "translation": "-----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "7561209f94247c19": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "1403761ef5f615e6": {
+      "translation": "Falha se alguma ocorrência atinge ou excede a severidade configurada (padrão: grave).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "30464df91d295cc1": {
+      "translation": "Compara a execução atual com uma linha de base salva; falha se o número de ocorrências graves aumenta ou se novas ocorrências graves aparecem.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "cd92039425125225": {
+      "translation": "Suprime ocorrências conhecidas temporariamente; as entradas expiradas falham automaticamente na verificação.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "6d1650aeed0b0d7b": {
+      "translation": "Cada mensagem segue o contrato `[OK]`/`[AVISO]`/`[ERRO]` + O que/Por que/Solução.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "983e4912afb67ded": {
+      "translation": "Referência da Linha de Comando",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "b58fa45b2d173de1": {
+      "translation": "Níveis de Severidade",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "40a1668056e051e0": {
+      "translation": "Quando usar",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "1f04ef9e8cc1d860": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "9735322a78d6ae27": {
+      "translation": "**crítica**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "536db113ae640184": {
+      "translation": "Bloqueia apenas problemas críticos que impedem o uso.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "5a6ee455e756db07": {
+      "translation": "**grave**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "13e921e8eb3ce65d": {
+      "translation": "Padrão. Bloqueia problemas que afetam o uso diário.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "ff5e12ab46603ae0": {
+      "translation": "**moderada**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "8fc909a23638a10c": {
+      "translation": "Mais rigorosa. Inclui problemas de usabilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "1413a72f94f95e03": {
+      "translation": "**menor**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "bf24cb26d1ff8780": {
+      "translation": "Mais rigorosa na prática. Detecta a maioria dos problemas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "5f9940644e595e8f": {
+      "translation": "**informativa**",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "61160bfbbd602860": {
+      "translation": "Detecta tudo, incluindo notas informativas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "18d31170dcf1f21d": {
+      "translation": "Códigos de Saída",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "47d1e04b68b670ac": {
+      "translation": "Significado",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "93982127e708d976": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "eeb243aa53a24f8e": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "e977ce0bff238cd7": {
+      "translation": "Todas as verificações passaram.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "b32092573c7d9ab3": {
+      "translation": "Erro de entrada ou validação (JSON inválido, arquivo ausente, incompatibilidade de esquema).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "ec00c1ceb8682eeb": {
+      "translation": "Falha na verificação (limite de severidade, regressão ou lista de permissão expirada).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "df68e78027bb996e": {
+      "translation": "Contrato de Saída",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "c0f59ea7d65aed0e": {
+      "translation": "Cada mensagem segue o contrato de priorização da experiência de usuários com baixa visão. Nenhuma mensagem é apenas um código de status ou uma frase enigmática.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "98ea5359db07a7a6": {
+      "translation": "Verificação aprovada",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "e11fa532ad681fbf": {
+      "translation": "Verificação falhou",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "51ad8bd51e7a5309": {
+      "translation": "Erros de entrada",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "f7c057f31d0b191f": {
+      "translation": "Formato da Lista de Permissões",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "6e9dcd5d8aa155bf": {
+      "translation": "As entradas da lista de permissões suprimem temporariamente ocorrências conhecidas. Cada entrada requer:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "b7385004fef4a9c9": {
+      "translation": "string",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "ba1747ccaba02a65": {
+      "translation": "O ID da regra/ocorrência a ser suprimida.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "42dfbc6c246ef23f": {
+      "translation": "Data no formato ISO (`aaaa-mm-dd`). As entradas expiradas falham na verificação.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "9fed41b4de261953": {
+      "translation": "Explicação da supressão com no mínimo 10 caracteres.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "9e3e3cdfd747fc98": {
+      "translation": "As entradas expiradas da lista de permissões não são ignoradas silenciosamente. Elas falham na verificação com uma mensagem clara explicando qual entrada expirou e quando.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "9f49597920081a83": {
+      "translation": "Formato do Relatório",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "e9ad186aea3073a4": {
+      "translation": "O a11y-ci aceita relatórios com contagens resumidas ou ocorrências brutas (ou ambos):",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "a4c66285128b2c58": {
+      "translation": "Os IDs das ocorrências são extraídos de forma flexível dos campos `id`, `rule_id`, `finding_id` ou `code`.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "3e7825ce5282c279": {
+      "translation": "Exemplo para GitHub Actions",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "fe6027d98d3709d4": {
+      "translation": "Atualizando a linha de base",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "935d79e9b600a85a": {
+      "translation": "Sempre que você alterar a saída da linha de comando, atualize a linha de base:",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "dd16900fc4c9dbb4": {
+      "translation": "Como funciona",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "fc4c301eaf476cc9": {
+      "translation": "Ferramentas Complementares",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "e630de37f868bec9": {
+      "translation": "Analisador de acessibilidade para a saída da linha de comando (gera relatórios).",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "38fd3f0725b7ea32": {
+      "translation": "Assistente para auxiliar usuários com baixa visão em casos de falhas no CLI.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "f6c8880997fa829d": {
+      "translation": "Contribuições",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "a2dc2ee814f91ada": {
+      "translation": "Consulte o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para obter as diretrizes.",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "2aca9b0e72841008": {
+      "translation": "Licença",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    },
+    "673d526b33ab644f": {
+      "translation": "MIT",
+      "model": "translategemma:12b",
+      "timestamp": 1772073463716
+    }
+  }
+}
