@@ -14,7 +14,7 @@ export const config: SiteConfig = {
     headlineAccent: 'Block regressions. Not developers.',
     description: 'CI gate for accessibility scorecards. Severity thresholds, baseline regression detection, time-boxed allowlists, and low-vision-first What/Why/Fix output.',
     primaryCta: { href: '#quick-start', label: 'Get started' },
-    secondaryCta: { href: '#features', label: 'Learn more' },
+    secondaryCta: { href: 'handbook/', label: 'Read the Handbook' },
     previews: [
       { label: 'Install', code: 'pip install a11y-ci' },
       { label: 'Gate', code: 'a11y-ci gate --current a11y.scorecard.json' },
