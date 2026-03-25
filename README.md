@@ -37,7 +37,7 @@ No network calls. Fully deterministic. Runs in any CI system that has Python.
 pip install a11y-ci
 ```
 
-Requires Python 3.11 or later.
+Requires Python 3.10 or later.
 
 ## Quick Start
 
