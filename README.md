@@ -84,6 +84,23 @@ Options:
                        Choices: info | minor | moderate | serious | critical
 ```
 
+### Validate Inputs
+
+Check that scorecard and/or allowlist files are well-formed before running the gate:
+
+```bash
+# Validate a scorecard
+a11y-ci validate --scorecard a11y.scorecard.json
+
+# Validate an allowlist
+a11y-ci validate --allowlist a11y-ci.allowlist.json
+
+# Validate both at once
+a11y-ci validate --scorecard a11y.scorecard.json --allowlist a11y-ci.allowlist.json
+```
+
+Reports finding counts, severity breakdown, and expired allowlist entries without evaluating policy.
+
 ### Severity Levels
 
 | Level | When to use |

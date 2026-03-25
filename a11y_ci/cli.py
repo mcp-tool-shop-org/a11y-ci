@@ -141,3 +141,82 @@ def gate_cmd(
     )
     click.echo(render(msg), nl=False)
     raise SystemExit(EXIT_FAIL)
+
+
+@main.command("validate")
+@click.option(
+    "--scorecard",
+    "scorecard_path",
+    required=False,
+    type=click.Path(exists=True, dir_okay=False),
+    help="Path to a scorecard JSON to validate.",
+)
+@click.option(
+    "--allowlist",
+    "allowlist_path",
+    required=False,
+    type=click.Path(exists=True, dir_okay=False),
+    help="Path to an allowlist JSON to validate.",
+)
+def validate_cmd(
+    scorecard_path: str | None,
+    allowlist_path: str | None,
+):
+    """Validate scorecard and/or allowlist JSON without running the gate."""
+    if not scorecard_path and not allowlist_path:
+        msg = CliMessage(
+            status="ERROR",
+            id="A11Y.CI.VALIDATE.NO_INPUT",
+            title="No files to validate",
+            what=["Neither --scorecard nor --allowlist was provided."],
+            why=["At least one file must be specified for validation."],
+            fix=["Run: a11y-ci validate --scorecard <path> and/or --allowlist <path>"],
+        )
+        click.echo(render(msg), nl=False)
+        raise SystemExit(EXIT_INPUT_ERROR)
+
+    errors: list[str] = []
+
+    if scorecard_path:
+        try:
+            sc = Scorecard.load(scorecard_path)
+            n = len(sc.findings)
+            counts = sc.counts()
+            click.echo(f"Scorecard OK: {n} finding(s), counts: {counts}")
+        except Exception as e:
+            errors.append(f"Scorecard: {type(e).__name__}: {e}")
+
+    if allowlist_path:
+        try:
+            al = Allowlist.load(allowlist_path)
+            n = len(al.entries)
+            expired = al.expired_entries()
+            status = f"{len(expired)} expired" if expired else "none expired"
+            click.echo(f"Allowlist OK: {n} entry/entries, {status}")
+        except AllowlistError as e:
+            errors.append(f"Allowlist: {str(e).splitlines()[0]}")
+        except Exception as e:
+            errors.append(f"Allowlist: {type(e).__name__}: {e}")
+
+    if errors:
+        msg = CliMessage(
+            status="ERROR",
+            id="A11Y.CI.VALIDATE.FAIL",
+            title="Validation failed",
+            what=[f"{len(errors)} file(s) failed validation."],
+            why=errors,
+            fix=["Fix the listed errors and re-run validation."],
+        )
+        click.echo(render(msg), nl=False)
+        raise SystemExit(EXIT_INPUT_ERROR)
+
+    msg = CliMessage(
+        status="OK",
+        id="A11Y.CI.VALIDATE.PASS",
+        title="All files valid",
+        what=["All provided files passed validation."],
+        why=["File structure and schema requirements are met."],
+        fix=["No action needed. Files are ready for use with 'a11y-ci gate'."],
+    )
+    click.echo(render(msg), nl=False)
+    raise SystemExit(EXIT_PASS)
