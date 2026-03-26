@@ -5,13 +5,15 @@ sidebar:
   order: 2
 ---
 
-## Command
+## Commands
+
+a11y-ci has two subcommands: `gate` (evaluate policy) and `validate` (check file structure).
+
+### gate
 
 ```bash
 a11y-ci gate [OPTIONS]
 ```
-
-## Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
@@ -19,6 +21,32 @@ a11y-ci gate [OPTIONS]
 | `--baseline` | PATH | optional | Path to the baseline scorecard JSON |
 | `--allowlist` | PATH | optional | Path to the allowlist JSON |
 | `--fail-on` | SEVERITY | `serious` | Minimum severity to fail on |
+
+### validate
+
+Check that scorecard and/or allowlist files are well-formed without running the gate:
+
+```bash
+a11y-ci validate [OPTIONS]
+```
+
+| Option | Type | Description |
+|--------|------|-------------|
+| `--scorecard` | PATH | Path to a scorecard JSON to validate |
+| `--allowlist` | PATH | Path to an allowlist JSON to validate |
+
+At least one of `--scorecard` or `--allowlist` is required. Reports finding counts, severity breakdown, and expired allowlist entries.
+
+```bash
+# Validate a scorecard
+a11y-ci validate --scorecard a11y.scorecard.json
+
+# Validate an allowlist
+a11y-ci validate --allowlist a11y-ci.allowlist.json
+
+# Validate both
+a11y-ci validate --scorecard a11y.scorecard.json --allowlist a11y-ci.allowlist.json
+```
 
 ## Severity levels
 

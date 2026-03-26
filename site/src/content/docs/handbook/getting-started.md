@@ -7,7 +7,7 @@ sidebar:
 
 ## Prerequisites
 
-- Python 3.11+
+- Python 3.10+
 - [a11y-lint](https://pypi.org/project/a11y-lint/) for generating scorecards
 
 ## Install

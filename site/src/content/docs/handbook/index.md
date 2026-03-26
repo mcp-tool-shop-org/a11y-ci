@@ -13,5 +13,6 @@ Welcome to the a11y-ci handbook.
 - **[CLI Reference](/a11y-ci/handbook/cli-reference/)** — Severity levels, exit codes, options
 - **[Allowlists](/a11y-ci/handbook/allowlists/)** — Time-boxed suppressions with expiry enforcement
 - **[CI Integration](/a11y-ci/handbook/ci-integration/)** — GitHub Actions, baselines, and best practices
+- **[For Beginners](/a11y-ci/handbook/beginners/)** — New to a11y-ci? Start here for a gentle introduction
 
 [Back to landing page](/a11y-ci/)
